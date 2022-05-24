@@ -1,16 +1,3 @@
-# Задача
-donation = float(input('Введите донат: '))
-
-if donation >= 1000:
-    print("Спасибо вам за ваше пожертвование! Вы получили статус платинового пожертвования!")
-elif donation >= 500:
-    print("Спасибо вам за ваше пожертвование! Вы получили статус золотого пожертвования!")
-elif donation >= 100:
-    print("Спасибо вам за ваше пожертвование! Вы получили статус серебряного пожертвования!")
-else:
- print("Спасибо вам за ваше пожертвование! Вы получили статус бронзового пожертвования!")
-#
-#
 # # Задача
 # a = 5
 # b = 5
@@ -21,46 +8,6 @@ else:
 #     print("Can't")
 
 
-# # Задача колл-центр
-# mn1_busy = False
-# mn2_busy = True
-# mn3_busy = True
-# head_mng = 'Главный менеджер'
-#
-# manager_num = 1
-# queue = 3
-#
-# if mn1_busy == True and mn2_busy == True and mn3_busy == True and queue < 2:
-#
-# if mn1_busy == False and mn2_busy == False and mn3_busy == False:
-#     mng_num = 1
-#     print('Ваш менеджер: ', mng_num)
-# #
-# # if manager_num == True:
-# #     print('Ваш менеджер 1')
-# # elif manager_num == False and manager_num == 2 or manager_num == 3:
-# #     print('Звонок отправляется второму')
-# # elif manager_num == 1 and manager_num == 2
-#
-#
-# manager_num_1=False
-# manager_num_2=False
-# manager_num_3=False
-# #gl_manager
-#
-# # time=0
-# ochered=2
-#
-# if (manager_num_1==True) and (manager_num_2==True) and (manager_num_3==True) | (manager_num_1==True) and (manager_num_2==True) and (manager_num_3==False) |(manager_num_1==True) and (manager_num_2==False) and (manager_num_3==False):
-#     print('Ваш менеджер manager_num_1')
-# elif (manager_num_1==False) and (manager_num_2==True) and (manager_num_3==True) |(manager_num_1==False) and (manager_num_2==True) and (manager_num_3==False):
-#     print('Ваш менеджер manager_num_2')
-# elif (manager_num_1==False) and (manager_num_2==False) and (manager_num_3==True) |(manager_num_1==True) and (manager_num_2==False) and (manager_num_3==True):
-#     print('Ваш менеджер manager_num_3')
-# elif ((manager_num_1==False) and (manager_num_2==False) and (manager_num_3==False)) and ochered<2:
-#     print('Ожидайте ответа оператора')
-# elif ((manager_num_1==False) and (manager_num_2==False) and (manager_num_3==False)) and ochered>=2:
-#     print('Ваш менеджер gl_manager')
 
 
 #
