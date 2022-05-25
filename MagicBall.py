@@ -1,6 +1,6 @@
 import random # Импортируем модуль random
-name = input('Введите Ваше имя')
-question = input('Введите вопрос')
+name = input('Введите Ваше имя: ')
+question = input('Введите вопрос: ')
 random_num = random.randint(1, 9)
 
 if not name:
