@@ -1,21 +1,22 @@
-def electric(t1, t2, t3):
-    result_electro = (t1 * 6.18) + (t3 * 5.15) + (t2 * 1.74)
-    return 'Сумма оплаты за электроэнергию составила: ', result_electro
+import math
 
 
-def gas(t1, t2, t3):
-    result_gas = (t1 * 6.18) + (t3 * 5.92) + (t2 * 7.10)
-    return 'Сумма оплаты за электроэнергию составила: ', result_gas
+def decision(a, b, c):
+    discr = b ** 2 - 4 * a * c
+    return "Дискриминант D = %.2f" % discr
+    if discr > 0:
+        x1 = (-b + math.sqrt(discr)) / (2 * a)
+        x2 = (-b - math.sqrt(discr)) / (2 * a)
+        return ("x1 = %.2f \nx2 = %.2f" % (x1, x2))
+    elif discr == 0:
+        x = -b / (2 * a)
+        return ("x = %.2f" % x)
+    else:
+        return ("Корней нет")
 
 
-t1 = float(input('Введите показания по Тарифу 1 = '))
-t2 = float(input('Введите показания по Тарифу 2 = '))
-t3 = float(input('Введите показания по Тарифу 3 = '))
-stove = input('Какая у Вас плита газ / электро?: ')
-
-if stove == 'газ':
-    result = gas(t1, t2, t3)
-elif stove == 'электро':
-    result = electric(t1, t2, t3)
-
-print(result)
+print("Введите коэффициенты для уравнения")
+print("ax^2 + bx + c = 0:")
+a = float(input("a = "))
+b = float(input("b = "))
+c = float(input("c = "))

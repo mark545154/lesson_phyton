@@ -1,13 +1,13 @@
 ###################################################################
 #
 
-# stroka1 = 'HEllo'
-# stroka2 = stroka1.lower()
-#
-# print(stroka2)  # hello
-# print(stroka1.lower())  # hello
-# print(stroka1.upper())  # HELLO
-# print(stroka1.title())  # Hello
+stroka1 = 'HEllo'
+stroka2 = stroka1.lower()
+
+print(stroka2)  # hello
+print(stroka1.lower())  # hello
+print(stroka1.upper())  # HELLO
+print(stroka1.title())  # Hello
 
 ###################################################################
 # Задание1. Вы программист, работающий в организации, которая пытается оцифровать и хранить стихи под названием «Poetry Passion».
@@ -180,22 +180,15 @@ import random
 
 def genery_art(tovar, country, price):
     art = (tovar + '_' + country[:3]).lower()
+
+    # Магазин проводит акцию, вся одежда из Германии распродается со скидкой 20
+    # процентов. Необходимо проверить условие по стране производителя и изменять
+    # цену
+    if country.title() == 'Германия' or country.title() == 'Germany':
+        sale_price = price * 0.8
+        return tovar.title(), art, str(sale_price) + ' руб.'
+
     return tovar.title(), art, str(price) + ' руб.'
 
 
 print(genery_art(input('Введите название товара: '), input('Введите страну: '), int(input('Введите цену товара: '))))
-
-
-# Магазин проводит акцию, вся одежда из Германии распродается со скидкой 20
-# процентов. Необходимо проверить условие по стране производителя и изменять
-# цену
-
-# def catalog (name_of_good, country, price):
-#     art = name_of_good.lower() +'_'+ country.lower()[:3]
-#     if country == 'Германия':
-#         price = price * 20 / 100
-#     else:
-#         price
-#     return name_of_good.title(), art, price
-# name, arti, price = catalog(input('Введите наименование товара '), input('Введите страну происхождения '), float(input('Введите цену ')))
-# print(name, arti, price)
