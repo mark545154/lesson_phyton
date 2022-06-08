@@ -1,5 +1,5 @@
 #############################################################################
-#- - - - - - - - - - - - Что такое список? - - - - - - - - #
+# - - - - - - - - - - - - Что такое список? - - - - - - - - #
 
 # heights = [161, 170, 167, 164]
 # names = ['Наталья', 'Алексей', 'Сергей', 'Марина']
@@ -65,7 +65,7 @@
 # author_last_names = []
 
 # for author in author_names: #для каждого элемента author_names 
-    
+
 #     # author_last_names.append(author.split()[-1]) #разделяем имя и фамилию и берем фамилию (-1 элемент в новом списке). добавляем в список
 #     author_last_names += [author.split()[-1]] 
 # print(author_last_names)
@@ -218,7 +218,7 @@
 # Подсчет элементов в списке
 # Предположим, у нас есть список букв, который представляет буквы в слове 
 # «Миссисипи»:
-    
+
 # letters = ['m', 'i', 's', 's', 'i', 's', 's', 'i', 'p', 'p', 'i']
 # num_i = letters.count('i')
 # print(num_i)
@@ -234,7 +234,7 @@
 #          'Jake', 'Jake', 'Laurie', 'Cassie', 'Cassie', 'Jake', \
 #          'Jake', 'Cassie', 'Laurie', 'Cassie', 'Jake','Jake', \
 #          'Cassie', 'Laurie']
-    
+
 # jake_votes = votes.count('Jake')
 # print(jake_votes) # 9
 
@@ -300,43 +300,28 @@
 # 6. Сколько односпальных кроватей в инвентаре? Сохраните свой ответ в twin_beds.
 # 7. Сортировка инвентаря с помощью .sort ()
 
-inventory = ['twin bed', 'twin bed', 'headboard', 'queen bed', \
-             'king bed', 'dresser', 'dresser', 'table', 'table', \
-             'nightstand', 'nightstand', 'king bed', 'king bed', \
-             'twin bed', 'twin bed', 'sheets', 'sheets', 'pillow', \
+inventory = ['twin bed', 'twin bed', 'headboard', 'queen bed',
+             'king bed', 'dresser', 'dresser', 'table', 'table',
+             'nightstand', 'nightstand', 'king bed', 'king bed',
+             'twin bed', 'twin bed', 'sheets', 'sheets', 'pillow',
              'pillow']
-inventory_len = len(inventory) # 19
+inventory_len = len(inventory)  # 19
 print(inventory_len)
 
-first = inventory[0] # twin bed
+first = inventory[0]  # twin bed
 print(first)
 
-last = inventory[-1] # pillow
+last = inventory[-1]  # pillow
 print(last)
 
-inventory_2_6 = range(2, 6) # [2, 3, 4, 5]
+inventory_2_6 = range(2, 6)  # [2, 3, 4, 5]
 print(list(inventory_2_6))
 
-first_3 = inventory[:3] # ['twin bed', 'twin bed', 'headboard']
+first_3 = inventory[:3]  # ['twin bed', 'twin bed', 'headboard']
 print(first_3)
 
-twin_beds = inventory.count('twin bed') # 4
+twin_beds = inventory.count('twin bed')  # 4
 print(twin_beds)
 
 inventory.sort()
 print(inventory)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
