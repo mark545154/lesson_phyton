@@ -1,15 +1,15 @@
 ###########################################################################
 # - - - - - - - - - Занятие с Викторией Михайловной - - - - - - - - - - - #
 
-# string = 'КоТейка моя'
-# string2 = 'котейкА'
-# string = string.lower() # котейка
-# string = string.upper() # КОТЕЙКА
-# string = string.title() # Котейка Моя
-#
-# print(string.lower() == string2.lower()) # True
-# print(string) # котейка
-# print(string.lower()) # котейка
+string = 'КоТейка моя'
+string2 = 'котейкА'
+string = string.lower()  # котейка
+string = string.upper()  # КОТЕЙКА
+string = string.title()  # Котейка Моя
+
+print(string.lower() == string2.lower())  # True
+print(string)  # котейка
+print(string.lower())  # котейка
 
 ###########################################################################
 # Задание
@@ -18,16 +18,16 @@
 # Вам дали две строки, название стихотворения и его автора, и попросили их немного
 # переформатировать, чтобы они соответствовали правилам базы данных организации.
 
-# poem_title = "евгений онегин"
-# poem_title_fixed = poem_title.title()
-# print(poem_title_fixed)
+poem_title = "евгений онегин"
+poem_title_fixed = poem_title.title()
+print(poem_title_fixed)
 
 ###########################################################################
 
-# black_cat = "Жил да был черный кот за углом"
-# black_cat = black_cat.split() # ['Жил', 'да', 'был', 'черный', 'кот', 'за', 'углом']
-#
-# print(black_cat) # ['Жил', 'да', 'был', 'черный', 'кот', 'за', 'углом']
+black_cat = "Жил да был черный кот за углом"
+black_cat = black_cat.split()  # ['Жил', 'да', 'был', 'черный', 'кот', 'за', 'углом']
+
+print(black_cat)  # ['Жил', 'да', 'был', 'черный', 'кот', 'за', 'углом']
 
 ###########################################################################
 # Задание
@@ -36,15 +36,15 @@
 # Используйте .split (), чтобы создать список с именем line_one_words, который содержит
 # каждое слово в этой строке стихов
 
-# line_one = "Еще в полях белеет снег"
-# line_one = line_one.split()
-# print(line_one) # ['Еще', 'в', 'полях', 'белеет', 'снег']
+line_one = "Еще в полях белеет снег"
+line_one = line_one.split()
+print(line_one)  # ['Еще', 'в', 'полях', 'белеет', 'снег']
 
 ###########################################################################
 #
-# name = "santana"
-# print(name.split('n'))  # ['sa', 'ta', 'a']
-# print(name.split('a'))  # ['s', 'nt', 'n', '']
+name = "santana"
+print(name.split('n'))  # ['sa', 'ta', 'a']
+print(name.split('a'))  # ['s', 'nt', 'n', '']
 
 ###########################################################################
 # Задание
@@ -52,64 +52,69 @@
 # импорта в базу данных. К сожалению, он отправил их в виде длинной строки с
 # именами, разделенными запятыми
 
-# authors = "Audre Lorde, William Carlos Williams, Gabriela Mistral, Jean Toomer, An Qi, Walt Whitman, " \
-#           "Shel Silverstein, Carmen Boullosa, Kamala Suraiyya, Langston Hughes, Adrienne Rich, Nikki Giovanni "
-# author_names = authors.split(', ')
-#
-# # Создайте еще один список с именем author_last_names, который содержит только
-# # фамилии поэтов в предоставленной строке
-# author_last_names = []  # пустой список
-#
-# for item in author_names:
-#     res = item.split()  # Разбиваем список
-#     author_last_names.append(res[-1])  # Метод append добавляет элемент в конец списка
-#
-# # print(author_names) # ['Audre Lorde', 'William Williams', 'Gabriela Mistral', 'Jean Toomer', 'An Qi', 'Walt Whitman', 'Shel Silverstein', 'Carmen Boullosa', 'Kama la Suraiyya', 'Langston Hughes', 'Adrienne Rich', 'Nikki Giovanni ']
-#
-# print(author_last_names)  # ['Lorde', 'Williams', 'Mistral', 'Toomer', 'Qi', 'Whitman', 'Silverstein', 'Boullosa', 'Suraiyya', 'Hughes', 'Rich', 'Giovanni']
+authors = "Audre Lorde, William Carlos Williams, Gabriela Mistral, Jean Toomer, An Qi, Walt Whitman, " \
+          "Shel Silverstein, Carmen Boullosa, Kamala Suraiyya, Langston Hughes, Adrienne Rich, Nikki Giovanni "
+author_names = authors.split(', ')
+
+# Создайте еще один список с именем author_last_names, который содержит только
+# фамилии поэтов в предоставленной строке
+author_last_names = []  # пустой список
+
+for item in author_names:
+    res = item.split()  # Разбиваем список
+    author_last_names.append(res[-1])  # Метод append добавляет элемент в конец списка
+
+print(
+    author_names)  # ['Audre Lorde', 'William Williams', 'Gabriela Mistral', 'Jean Toomer', 'An Qi', 'Walt Whitman', 'Shel Silverstein', 'Carmen Boullosa', 'Kama la Suraiyya', 'Langston Hughes', 'Adrienne Rich', 'Nikki Giovanni ']
+
+print(
+    author_last_names)  # ['Lorde', 'Williams', 'Mistral', 'Toomer', 'Qi', 'Whitman', 'Silverstein', 'Boullosa', 'Suraiyya', 'Hughes', 'Rich', 'Giovanni']
 
 ###########################################################################
 #
 
-# smooth_chorus = \
-# """And if you said, This life ain't good enough.
-# I would give my world to lift you up
-# I could change my life to better suit your mood
-# Because you're so smooth"""
-#
-# chorus_lines = smooth_chorus.split('\n')
-# print(chorus_lines) # ['And if you said, "This life ain\'t good enough."', 'I would give my world to lift you up', 'I could change my life to better suit your mood', "Because you're so smooth"]
+smooth_chorus = \
+    """And if you said, This life ain't good enough.
+I would give my world to lift you up
+I could change my life to better suit your mood
+Because you're so smooth"""
+
+chorus_lines = smooth_chorus.split('\n')
+print(
+    chorus_lines)  # ['And if you said, "This life ain\'t good enough."', 'I would give my world to lift you up', 'I could change my life to better suit your mood', "Because you're so smooth"]
 
 ###########################################################################
 # Задание
 # 1. Организация прислала вам полный текст стихотворения Ф.И. Тютчева «Весенние
 # воды». Они хотят, чтобы вы разбили стихотворение на отдельные строки.
 
-# spring_waters_text = \
-# """ Еще в полях белеет снег,
-# А воды уж весной шумят —
-# Бегут и будят сонный брег,
-# Бегут, и блещут, и гласят…
-# Они гласят во все концы:
-# «Весна идет, весна идет,
-# Мы молодой весны гонцы,
-# Она нас выслала вперед!
-# Весна идет, весна идет,
-# И тихих, теплых майских дней
-# Румяный, светлый хоровод
-# Толпится весело за ней!..."""
-#
-# spring_waters_lines = spring_waters_text.split('\n') # [' Еще в полях белеет снег,', 'А воды уж весной шумят —', 'Бегут и будят сонный брег,', 'Бегут, и блещут, и гласят… ', 'Они гласят во все концы:', '«Весна идет, весна идет,', 'Мы молодой весны гонцы,', 'Она нас выслала вперед! ', 'Весна идет, весна идет,', 'И тихих, теплых майских дней', 'Румяный, светлый хоровод', 'Толпится весело за ней!...']
-# print(spring_waters_lines)
+spring_waters_text = \
+    """ Еще в полях белеет снег,
+А воды уж весной шумят —
+Бегут и будят сонный брег,
+Бегут, и блещут, и гласят…
+Они гласят во все концы:
+«Весна идет, весна идет,
+Мы молодой весны гонцы,
+Она нас выслала вперед!
+Весна идет, весна идет,
+И тихих, теплых майских дней
+Румяный, светлый хоровод
+Толпится весело за ней!..."""
+
+spring_waters_lines = spring_waters_text.split(
+    '\n')  # [' Еще в полях белеет снег,', 'А воды уж весной шумят —', 'Бегут и будят сонный брег,', 'Бегут, и блещут, и гласят… ', 'Они гласят во все концы:', '«Весна идет, весна идет,', 'Мы молодой весны гонцы,', 'Она нас выслала вперед! ', 'Весна идет, весна идет,', 'И тихих, теплых майских дней', 'Румяный, светлый хоровод', 'Толпится весело за ней!...']
+print(spring_waters_lines)
 
 ###########################################################################
 ############## Соединение строк
 
-# my_munequita = ['My', 'Spanish', 'Harlem', 'Mona', 'Lisa']
-# result = ' '.join(my_munequita)  # My Spanish Harlem Mona Lisa
-# result = ', '.join(my_munequita)  # My, Spanish, Harlem, Mona, Lisa
-# result = ''.join(my_munequita)  # MySpanishHarlemMonaLisa
-# print(result)
+my_munequita = ['My', 'Spanish', 'Harlem', 'Mona', 'Lisa']
+result = ' '.join(my_munequita)  # My Spanish Harlem Mona Lisa
+result = ', '.join(my_munequita)  # My, Spanish, Harlem, Mona, Lisa
+result = ''.join(my_munequita)  # MySpanishHarlemMonaLisa
+print(result)
+
 
 ###########################################################################
 # Задача 1.
@@ -120,28 +125,29 @@
 # Surname – содержит фамилию пользователя
 # Patronymic - содержит отчество.
 
-# def login_gen(name, surname, patronymic):
-#     login = surname + '.' + name[0] + patronymic[0]
-#     return login + '@company.ru'
-#
-#
-# print(login_gen('Mark', 'Fominykh', 'Viktorovikh'))
-#
-# # Далее пользователю необходимо задать пароль. Политика компании такова, что пароль
-# # должен содержать не менее 7 символов и обязательно включать первую букву имени
-# # (обязательно заглавную) и символ «”»
-# password = input('Введите пароль из семи символов: ')  # M"fdgjp
-# name = input('Введите имя на латинице: ')  # Mark
-#
-#
-# def check_pass(password, name):
-#     if len(password) >= 7 and (name[0].title() in password) and ('"' in password):
-#         return 'Пароль изменен!'
-#     else:
-#         return 'Пароль не соответствует требованиям компании'
-#
-#
-# print(check_pass(password, name))
+def login_gen(name, surname, patronymic):
+    login = surname + '.' + name[0] + patronymic[0]
+    return login + '@company.ru'
+
+
+print(login_gen('Mark', 'Fominykh', 'Viktorovikh'))
+
+# Далее пользователю необходимо задать пароль. Политика компании такова, что пароль
+# должен содержать не менее 7 символов и обязательно включать первую букву имени
+# (обязательно заглавную) и символ «”»
+password = input('Введите пароль из семи символов: ')  # M"fdgjp
+name = input('Введите имя на латинице: ')  # Mark
+
+
+def check_pass(password, name):
+    if len(password) >= 7 and (name[0].title() in password) and ('"' in password):
+        return 'Пароль изменен!'
+    else:
+        return 'Пароль не соответствует требованиям компании'
+
+
+print(check_pass(password, name))
+
 
 ###########################################################################
 # Задача 2.
@@ -149,13 +155,14 @@
 # должен предусмотреть в приложении возможность вывода информации о документе в
 # консоль.
 
-# def inf_doc(doc_name, name, last_name, doc_type):
-#     return doc_name.upper(), name.title(), last_name.title(), doc_type.lower()
-#
-#
-# document_name, author_name, author_last_name, document_type = inf_doc('Договор', 'Марк', 'Фоминых', 'юридический')
-#
-# print(document_name, author_name, author_last_name, document_type)
+def inf_doc(doc_name, name, last_name, doc_type):
+    return doc_name.upper(), name.title(), last_name.title(), doc_type.lower()
+
+
+document_name, author_name, author_last_name, document_type = inf_doc('Договор', 'Марк', 'Фоминых', 'юридический')
+
+print(document_name, author_name, author_last_name, document_type)
+
 
 ###########################################################################
 # Кейс.
@@ -171,15 +178,16 @@
 # процентов. Необходимо проверить условие по стране производителя и изменять
 # цену.
 
-# def goods(product_name, country, price):
-#     articule = product_name + '_' + country[:3]
-#     if country.title() == 'Германия':
-#         price = price * 0.8
-#
-#     return product_name.title(), articule.upper(), price
-#
-#
-# print(goods('платье', 'Германия', 100))
+def goods(product_name, country, price):
+    articule = product_name + '_' + country[:3]
+    if country.title() == 'Германия':
+        price = price * 0.8
+
+    return product_name.title(), articule.upper(), price
+
+
+print(goods('платье', 'Германия', 100))
+
 
 ###########################################################################
 # 1. Проверить имя
@@ -192,8 +200,9 @@ def check_name(string, name):
         return True
     else:
         return False
+
+
 print(check_name('Hello, Ann!', 'ann'))
 
 ###########################################################################
 # Сделать по 4-ю задачу в файле (Задания дополнительные_строки) занятия 10
-
