@@ -50,30 +50,13 @@
 # Например, Спунеризм произносится, когда кто-то говорит «Belly Jeans» вместо «Jelly
 # Beans».
 
-def spoonerism(string):
-    result_string = string.split()
-    result_string.reverse()
-    result = ' '.join(result_string)
-    return result
-print(spoonerism('Belly Jeans'))
-
-# stroka = 'Belly Jeans'
-# words = stroka.split(' ')
-# letter_1 = words[0][:1]
-# letter_2 = words[1][:1]
-# words[0] = words[0].replace(letter_1, letter_2)
-# words[1] = words[1].replace(letter_2, letter_1)
-#
-# print(' '.join(words))
-
-# def spunerism(first_word, second_word):
-#     first_word1 = second_word[:3] + first_word[3:]
-#     second_word1 = first_word[:3] + second_word[3:]
-#     new_word = first_word1, second_word1
-#     return new_word
+# def spoonerism(string):
+#     string1, string2 = string.split()
+#     result = string2[:2] + string1[2:] + ' ' + string1[:2] + string2[2:]
+#     return result
 #
 #
-# print(spunerism(first_word=input('Введите первое слово: '), second_word=input('Введите второе слово: ')))
+# print(spoonerism('Belly Jeans'))
 
 ####################################################################
 # 5. Большая сумма
@@ -81,7 +64,22 @@ print(spoonerism('Belly Jeans'))
 # Мы будем перебирать каждый список и вычислять суммы, после этого мы сравним два и
 # вернем, какой из них имеет большую сумму.
 
+# numbers_list = [[5, 15, 5], [5, 5, 5]]
+#
+# sum_list = 0
+# for summa in numbers_list:
+#     if numbers_list[0] > numbers_list[1]:
+#         summa = 'Первый список больше', sum(numbers_list[0])
+#         print(summa)
+#     elif numbers_list[1] > numbers_list[0]:
+#         summa = 'Второй список больше', sum(numbers_list[1])
+#         print(summa)
+#     else:
+#         print('Суммы списков равны', summa)
 
+# ВТОРОЙ вариант
+# summa = [sum(index) for index in numbers_list]
+# print(summa)
 
 
 
@@ -94,18 +92,15 @@ print(spoonerism('Belly Jeans'))
 # 9000. Как только это произойдет, мы должны прекратить складывать числа и вернуть
 # значение, на котором мы остановились.
 
-
-
-
+new_list = []
+new_list.append(0, 9000)
+print(new_list)
 
 ####################################################################
 # 7. Максимальное количество
 # Вот вам более традиционная проблема кодирования. Эта функция будет использоваться
 # для поиска максимального числа в списке чисел. Это можно сделать с помощью функции
 # max () в Python, но в качестве задачи необходимо реализовать эту функцию вручную.
-
-
-
 
 
 ####################################################################
