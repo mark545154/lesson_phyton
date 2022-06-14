@@ -1,50 +1,50 @@
 ####################################################################
 # - - - - - - - - - - Циклы - - - - - - - - - - - - - #
 
-# dog_breeds = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
-# # print(dog_breeds[0])
-# # print(dog_breeds[1])
-# # print(dog_breeds[2])
-# # print(dog_breeds[3])
-# # print(dog_breeds[4])
-#
-# for item in dog_breeds:
-#     print(item)
+dog_breeds = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
+# print(dog_breeds[0])
+# print(dog_breeds[1])
+# print(dog_breeds[2])
+# print(dog_breeds[3])
+# print(dog_breeds[4])
+
+for item in dog_breeds:
+    print(item)
 
 ####################################################################
 # Задание
 # Вставьте следующий код
 
-# dog_breeds = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
-# for breed in dog_breeds:
-#     print(breed)
+dog_breeds = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
+for breed in dog_breeds:
+    print(breed)
 
 ####################################################################
 # Задание
 # 1.Запустите код. Вы должны получить ошибку IndentationError, потому что строка
 # print(game) не имеет отступа.
 
-# board_games = ['Settlers of Catan', 'Carcassone', 'Power Grid', 'Agricola', 'Scrabble']
-# sport_games = ['футбол', 'регби', 'хоккей', 'бейсбол', 'крикет']
+board_games = ['Settlers of Catan', 'Carcassone', 'Power Grid', 'Agricola', 'Scrabble']
+sport_games = ['футбол', 'регби', 'хоккей', 'бейсбол', 'крикет']
+
+# for game in board_games:
+#     print(game)
 #
-# # for game in board_games:
-# #     print(game)
-# #
-# # for game in sport_games:
-# #     print(game)
-#
-# for index in range(len(board_games)):
-#     print(board_games[index])
-#     print(sport_games[index])
+# for game in sport_games:
+#     print(game)
+
+for index in range(len(board_games)):
+    print(board_games[index])
+    print(sport_games[index])
 
 ####################################################################
 # Задание
 # 1. Используйте функцию диапазона в цикле for, чтобы распечатать обещание 5 раз.
 
-# promise = "Я не буду жевать жвачку в классе."
-#
-# for item in range(5):
-#     print(promise)
+promise = "Я не буду жевать жвачку в классе."
+
+for item in range(5):
+    print(promise)
 
 ####################################################################
 # Бесконечные циклы
@@ -63,26 +63,26 @@
 # Напишите цикл for, который проходит через каждого студента в student_period_A и
 # добавляет его в конец student_period_B.
 
-# students_period_A = ["Alex", "Briana", "Cheri", "Daniele"]
-# students_period_B = ["Dora", "Minerva", "Alexa", "Obie"]
-#
-# for student in students_period_B:
-#     students_period_A.append(student)
-#
-# print(students_period_A)  # ['Alex', 'Briana', 'Cheri', 'Daniele', 'Dora', 'Minerva', 'Alexa', 'Obie']
+students_period_A = ["Alex", "Briana", "Cheri", "Daniele"]
+students_period_B = ["Dora", "Minerva", "Alexa", "Obie"]
+
+for student in students_period_B:
+    students_period_A.append(student)
+
+print(students_period_A)  # ['Alex', 'Briana', 'Cheri', 'Daniele', 'Dora', 'Minerva', 'Alexa', 'Obie']
 
 ####################################################################
 # Break
 # Часто возникает необходимость использования цикла for для поиска некоторого значения
 # в списке
 
-# items_on_sale = ["голубая рубашка", "полосатые носки", "вязаное платье", "красный ободок", "комбинезон с динозавром"]
-# # проверяем есть ли вязаное платье в продаже:
-# for item in items_on_sale:
-#     if item == "вязаное платье":
-#         print(item)
-#         break
-# print("Поиск завершен!")
+items_on_sale = ["голубая рубашка", "полосатые носки", "вязаное платье", "красный ободок", "комбинезон с динозавром"]
+# проверяем есть ли вязаное платье в продаже:
+for item in items_on_sale:
+    if item == "вязаное платье":
+        print(item)
+        break
+print("Поиск завершен!")
 
 
 ####################################################################
@@ -91,11 +91,11 @@
 # Допустим, распечатать все числа в списке, если они не отрицательные. Мы можем
 # использовать continue для перехода к следующему i в списке
 
-# big_number_list = [1, 2, -1, 4, -5, 5, 2, -9]
-# for i in big_number_list:
-#     if i < 0:
-#         continue
-#     print(i)
+big_number_list = [1, 2, -1, 4, -5, 5, 2, -9]
+for i in big_number_list:
+    if i < 0:
+        continue
+    print(i)
 
 
 ####################################################################
@@ -104,14 +104,14 @@
 # dog_breeds_available_for_adoption. Используя цикл for, выполните итерацию по
 # списку dog_breeds_available_for_adoption и распечатайте каждую породу собак.
 
-# dog_breeds_available_for_adoption = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
-#
-# dog_breed_I_want = 'далматинец'
-#
-# for bread in dog_breeds_available_for_adoption:
-#     if bread == dog_breed_I_want:
-#         print('У них есть собака, которую я хочу!')
-#         break
+dog_breeds_available_for_adoption = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
+
+dog_breed_I_want = 'далматинец'
+
+for bread in dog_breeds_available_for_adoption:
+    if bread == dog_breed_I_want:
+        print('У них есть собака, которую я хочу!')
+        break
 
 ####################################################################
 # - - - - - - - - - - - - While циклы - - - - - - - - - - -#
@@ -119,13 +119,13 @@
 # существует другой тип цикла, называемый циклом while. Цикл while выполняет набор кода
 # до тех пор, пока не будет достигнуто какое-либо условие
 
-# dog_breeds = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
-#
-# index = 0
-#
-# while index < len(dog_breeds):
-#     print(dog_breeds[index])
-#     index += 1  # Нужно обязательно указать счётчик, чтобы прибавлял значение или уйдёт в бесконечный цикл!!!!!!!!!!
+dog_breeds = ['бульдог', 'далматинец', 'шпиц', 'пудель', 'колли']
+
+index = 0
+
+while index < len(dog_breeds):
+    print(dog_breeds[index])
+    index += 1  # Нужно обязательно указать счётчик, чтобы прибавлял значение или уйдёт в бесконечный цикл!!!!!!!!!!
 
 ####################################################################
 # Вложенные циклы
@@ -133,18 +133,18 @@
 # Рассмотрим пример списка, состоящего из нескольких списков. Как мы можем перебрать
 # все отдельные элементы?
 
-# project_teams = [["Савва", "Саманта", "Джеймс"], ["Людмила", "Яков"], ["Эльдар", "Катерина"]]
-#
-# for team in project_teams:
-#     for student in team:
-#         print(student)  # Савва
-# # Саманта
-# # Джеймс
-# # Людмила
-# # Яков
-# # Эльдар
-# # Катерина
-# print(project_teams)  # [['Савва', 'Саманта', 'Джеймс'], ['Людмила', 'Яков'], ['Эльдар', 'Катерина']]
+project_teams = [["Савва", "Саманта", "Джеймс"], ["Людмила", "Яков"], ["Эльдар", "Катерина"]]
+
+for team in project_teams:
+    for student in team:
+        print(student)  # Савва
+# Саманта
+# Джеймс
+# Людмила
+# Яков
+# Эльдар
+# Катерина
+print(project_teams)  # [['Савва', 'Саманта', 'Джеймс'], ['Людмила', 'Яков'], ['Эльдар', 'Катерина']]
 
 ####################################################################
 # Задание
@@ -153,31 +153,31 @@
 # Мы хотим суммировать общее количество проданных сортов. Начните с определения
 # переменной scoops_sold и установите ее равной нулю
 
-# sales_data = [[12, 17, 22], [2, 10, 3], [5, 12, 13]]
-#
-# scoops_sold = 0
-#
-# for scoop in sales_data:
-#     for sale in scoop:
-#         scoops_sold += sale
-#
-# print(scoops_sold)  # 96
+sales_data = [[12, 17, 22], [2, 10, 3], [5, 12, 13]]
+
+scoops_sold = 0
+
+for scoop in sales_data:
+    for sale in scoop:
+        scoops_sold += sale
+
+print(scoops_sold)  # 96
 
 ####################################################################
 # Генераторы списков
 # Допустим, в результате исследования некоего веб-сайта мы получили следующие слова:
 
-# words = ["@coolguy35", "#nofilter", "@kewldawg54", "reply", "timestamp", "@matchamom", "follow", "#updog"]
-#
-# usernames = [word for word in words if word[0] == '@'] # аналогично, что ниже ['@coolguy35', '@kewldawg54', '@matchamom']
-#
-#
-# # usernames = []
-# # for word in words:
-# #     if word[0] == '@':
-# #         usernames.append(word) # ['@coolguy35', '@kewldawg54', '@matchamom']
-#
-# print(usernames)
+words = ["@coolguy35", "#nofilter", "@kewldawg54", "reply", "timestamp", "@matchamom", "follow", "#updog"]
+
+usernames = [word for word in words if word[0] == '@'] # аналогично, что ниже ['@coolguy35', '@kewldawg54', '@matchamom']
+
+
+# usernames = []
+# for word in words:
+#     if word[0] == '@':
+#         usernames.append(word) # ['@coolguy35', '@kewldawg54', '@matchamom']
+
+print(usernames)
 
 ####################################################################
 # 1. Списки файлов
@@ -193,22 +193,22 @@
 # 3. Добавить в отсортированный список следующий элемент: 006_logs_2017-11-06.
 # 4. Преобразуйте этот лист в строку, используя в качестве разделителя две вертикальные черты ||.
 
-# file_string = '003_logs_2017-11-03;001_logs_2017-11-01;005_logs_2017-11-05;002_logs_2017-11-02;004_logs_2017-11-04'
-#
-# file_list = file_string.split(';')
-# print(file_list) # ['003_logs_2017-11-03', '001_logs_2017-11-01', '005_logs_2017-11-05', '002_logs_2017-11-02', '004_logs_2017-11-04']
-#
-# file_list_sorted = sorted(file_list)
-# print(file_list_sorted) # ['001_logs_2017-11-01', '002_logs_2017-11-02', '003_logs_2017-11-03', '004_logs_2017-11-04', '005_logs_2017-11-05']
-#
-# file_list_sorted.append('006_logs_2017-11-06')
-# print(file_list_sorted) # ['001_logs_2017-11-01', '002_logs_2017-11-02', '003_logs_2017-11-03', '004_logs_2017-11-04', '005_logs_2017-11-05', '006_logs_2017-11-06']
-#
-# string_file = '||'.join(file_list_sorted)
-# print(string_file) # 001_logs_2017-11-01||002_logs_2017-11-02||003_logs_2017-11-03||004_logs_2017-11-04||005_logs_2017-11-05||006_logs_2017-11-06
+file_string = '003_logs_2017-11-03;001_logs_2017-11-01;005_logs_2017-11-05;002_logs_2017-11-02;004_logs_2017-11-04'
+
+file_list = file_string.split(';')
+print(file_list) # ['003_logs_2017-11-03', '001_logs_2017-11-01', '005_logs_2017-11-05', '002_logs_2017-11-02', '004_logs_2017-11-04']
+
+file_list_sorted = sorted(file_list)
+print(file_list_sorted) # ['001_logs_2017-11-01', '002_logs_2017-11-02', '003_logs_2017-11-03', '004_logs_2017-11-04', '005_logs_2017-11-05']
+
+file_list_sorted.append('006_logs_2017-11-06')
+print(file_list_sorted) # ['001_logs_2017-11-01', '002_logs_2017-11-02', '003_logs_2017-11-03', '004_logs_2017-11-04', '005_logs_2017-11-05', '006_logs_2017-11-06']
+
+string_file = '||'.join(file_list_sorted)
+print(string_file) # 001_logs_2017-11-01||002_logs_2017-11-02||003_logs_2017-11-03||004_logs_2017-11-04||005_logs_2017-11-05||006_logs_2017-11-06
 
 
-#################################################################### # Написать комментарии к данной задачи!!!!!!
+#################################################################### # С комментариями к задаче
 # 2. Суммы чисел
 # Напишите программу, на вход которой подаётся список чисел одной строкой. Программа должна
 # для каждого элемента этого списка вывести сумму двух его соседей. Для элементов списка,
@@ -222,27 +222,31 @@ def sum_neighbor(number_string):
     int_number_list = []
     result = []
     result_string_list = []
-    number_list = number_string.split()
+    number_list = number_string.split()  # Разбиваем строку на список по пробелам
 
-    for item in number_list:
-        number = int(item)
-        int_number_list.append(number)
+    # Каждый элемент списка преобразуем в целое число
+    for item in number_list:  # Перебираем список number_list пока он не закончится. В item храним элемент списка
+        number = int(item)  # Каждый элемент списка переводится в int()
+        int_number_list.append(number)  # Добавляем преобразованное значение в новый пустой список int_number_list
+        # через функцию append()
 
-    for index in range(len(int_number_list)):
+    for index in range(len(int_number_list)):  # Для каждого значения полученного в int_number_list мы перебираем по
+        # index, чтобы знать последний элемент или нет
 
-        if index != len(int_number_list) - 1:
-            summing = int_number_list[index - 1] + int_number_list[index + 1]
-            result.append(summing)
+        if index != len(int_number_list) - 1:  # Если элемент в списке int_number_list не последний, то считаем через if
+            summing = int_number_list[index - 1] + int_number_list[index + 1]  # Складываем соседние значения в списке int_number_list по index
+            result.append(summing)  # На каждой итерации добавляем в новый список result новые значения
 
-        else:
-            summing = int_number_list[index - 1] + int_number_list[0]
-            result.append(summing)
+        else:  # Если элемент в списке int_number_list последний, то считаем через else
+            summing = int_number_list[index - 1] + int_number_list[0]  # Прибавляем [0] элемент, а не последний
+            result.append(summing)  # Добавляем последнее значение в список
 
     for item in result:
-        string = str(item)
-        result_string_list.append(string)
+        string = str(item)  # Преобразуем каждое значение из списка result в строку str()
+        result_string_list.append(string)  # result_string_list хранит только строки и только после этого применяем
+        # метод join()
 
-    return ' '.join(result_string_list)
+    return ' '.join(result_string_list)  # Возвращаем результат при помощи метода join()
 
 
 print(sum_neighbor('1 3 5 6 10'))  # 13 6 9 15 7

@@ -9,14 +9,14 @@
 # предложения и строку для имени. Функция должна вернуть True, если имя существует в
 # строке (игнорируя любые различия в использовании заглавных букв).
 
-# def check_name(string, name):
-#     if name.lower() in string.lower():
-#         return True
-#     else:
-#         return False
-#
-#
-# print(check_name('Hello, Ann!', 'ann'))
+def check_name(string, name):
+    if name.lower() in string.lower():
+        return True
+    else:
+        return False
+
+
+print(check_name('Hello, Ann!', 'ann'))
 
 ####################################################################
 # 2. Каждая вторая буква
@@ -24,12 +24,12 @@
 # букву из строки и возвращает результирующую строку. Есть несколько способов решить
 # эту проблему.
 
-# def extracts(line):
-#     result = line[1::2]
-#     return result
-#
-#
-# print(extracts('Привет всем!')) # рвтве!
+def extracts(line):
+    result = line[1::2]
+    return result
+
+
+print(extracts('Привет всем!')) # рвтве!
 
 ####################################################################
 # 3. Реверсия
@@ -37,12 +37,12 @@
 # функцию, которая возвращает строку в обратном порядке (например, «Абра» вернется,
 # как «арбА»)
 
-# def flip_over(string):
-#     result_string = string[-1::-1]
-#     return result_string
-#
-#
-# print(flip_over('Абра')) # арбА
+def flip_over(string):
+    result_string = string[-1::-1]
+    return result_string
+
+
+print(flip_over('Абра')) # арбА
 
 ####################################################################
 # 4. Сделайте Спунеризм
@@ -50,13 +50,13 @@
 # Например, Спунеризм произносится, когда кто-то говорит «Belly Jeans» вместо «Jelly
 # Beans».
 
-# def spoonerism(string):
-#     string1, string2 = string.split()
-#     result = string2[:2] + string1[2:] + ' ' + string1[:2] + string2[2:]
-#     return result
-#
-#
-# print(spoonerism('Belly Jeans'))
+def spoonerism(string):
+    string1, string2 = string.split()
+    result = string2[:2] + string1[2:] + ' ' + string1[:2] + string2[2:]
+    return result
+
+
+print(spoonerism('Belly Jeans'))
 
 ####################################################################
 # 5. Большая сумма
@@ -64,18 +64,18 @@
 # Мы будем перебирать каждый список и вычислять суммы, после этого мы сравним два и
 # вернем, какой из них имеет большую сумму.
 
-# numbers_list = [[5, 15, 5], [5, 5, 5]]
-#
-# sum_list = 0
-# for summa in numbers_list:
-#     if numbers_list[0] > numbers_list[1]:
-#         summa = 'Первый список больше', sum(numbers_list[0])
-#         print(summa)
-#     elif numbers_list[1] > numbers_list[0]:
-#         summa = 'Второй список больше', sum(numbers_list[1])
-#         print(summa)
-#     else:
-#         print('Суммы списков равны', summa)
+numbers_list = [[5, 15, 5], [5, 5, 5]]
+
+sum_list = 0
+for summa in numbers_list:
+    if numbers_list[0] > numbers_list[1]:
+        summa = 'Первый список больше', sum(numbers_list[0])
+        print(summa)
+    elif numbers_list[1] > numbers_list[0]:
+        summa = 'Второй список больше', sum(numbers_list[1])
+        print(summa)
+    else:
+        print('Суммы списков равны', summa)
 
 # ВТОРОЙ вариант
 # summa = [sum(index) for index in numbers_list]
@@ -92,9 +92,23 @@
 # 9000. Как только это произойдет, мы должны прекратить складывать числа и вернуть
 # значение, на котором мы остановились.
 
-new_list = []
-new_list.append(0, 9000)
-print(new_list)
+index = 0
+
+while index < 9000:
+    print(index)
+    index = index + 1
+else:
+    print('Нагрузка системы выше: 9000!')
+
+
+# Ещё один вариант
+# for num in range(9000):
+#     print('Нагрузка системы: ', num)
+#     if num >= 9000:
+#         break
+#
+# print('Нагрузка системы превышает 9000!')
+
 
 ####################################################################
 # 7. Максимальное количество
@@ -102,8 +116,35 @@ print(new_list)
 # для поиска максимального числа в списке чисел. Это можно сделать с помощью функции
 # max () в Python, но в качестве задачи необходимо реализовать эту функцию вручную.
 
+list_num = [5, 15, 48, 157, 246, 387, 589]
+
+# max_number = max(list_num)
+# print('Максимальное число в списке: ', max_number)
+
+
+def max_number(list_num):
+    num = list_num[0]
+    for index in list_num:
+        if index > num:
+            num = index
+    return num
+
+print(max_number(list_num))
 
 ####################################################################
 # 8. Перевернутый список
 # Необходимо протестировать два списка, чтобы увидеть, является ли второй список
 # обратным первому. Напишите функцию, реализующую данное сравнение списков
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [5, 4, 3, 2, 1]
+
+
+def checking_lists(list1, list2):
+    if list2 == list(reversed(list1)):
+        return 'Второй список является обратный первому'
+    else:
+        return 'Второй список не является обратный первому'
+
+
+print(checking_lists(list1, list2))
