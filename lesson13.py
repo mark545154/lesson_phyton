@@ -197,9 +197,9 @@
 
 def num_odd(num1, num2):
     if num1 % 2 == 0:
-        return 'Число будет нечётное: ', num1
+        return 'Число будет нечётное: ', num2
     else:
-        return 'Число будет чётное: ', num2
+        return 'Число будет чётное: ', num1
 
 
 print(num_odd(int(input('Введите первое число: ')), int(input('Введите второе число: '))))
