@@ -8,22 +8,22 @@
 # Среднее значение заражения за последние 5 дней
 # Среднее значение умерших
 
-# Ill = [3.9, 4.4, 4.3, 4.6, 4.7]
-# Deth = [900, 997, 1001, 1003, 987]
-#
-#
-# def illnes(ill_list, deth_list):
-#     doli = []
-#     for i in range(len(ill_list)):
-#         doli.append(round(deth_list[i] / (ill_list[i] * 1000) * 100, 2))  # round(num, число сколько хотим видеть после запятой)
-#     return doli
-#
-# print('Долю умерших от заболевших ', illnes(Ill, Deth))
-#
-# def sred(list1):
-#     return sum(list1)/len(list1)
-# print('Среднее значение заболевших ', sred(Ill))
-# print('Среднее значение умерших ', sred(Deth))
+Ill = [3.9, 4.4, 4.3, 4.6, 4.7]
+Deth = [900, 997, 1001, 1003, 987]
+
+
+def illnes(ill_list, deth_list):
+    doli = []
+    for i in range(len(ill_list)):
+        doli.append(round(deth_list[i] / (ill_list[i] * 1000) * 100, 2))  # round(num, число сколько хотим видеть после запятой)
+    return doli
+
+print('Долю умерших от заболевших ', illnes(Ill, Deth))
+
+def sred(list1):
+    return sum(list1)/len(list1)
+print('Среднее значение заболевших ', sred(Ill))
+print('Среднее значение умерших ', sred(Deth))
 
 ####################################################################
 # Кейс 2. В компании на входе при прикладывании пропуска к турникету имя пользователя
@@ -35,20 +35,20 @@
 # сотрудников было в офисе в этот день, а также, был ли на работе сотрудник с
 # подозрением на коронавирус.
 
-# employees = ['Иванов', 'Петров', 'Сидоров', 'Тищенко', 'Берёзов', 'Яблоков']
-# rospotreb = 'Тищенко'
-#
-#
-# def korona(list_epl, ill_epl):
-#
-#     return len(list_epl), ill_epl in list_epl
-#
-#
-# count_epl, in_place = korona(employees, rospotreb)
-#
-# print(f'В офисе было {count_epl} сотрудников, с подозрением на коронавирус присутствовал {in_place}.')
+employees = ['Иванов', 'Петров', 'Сидоров', 'Тищенко', 'Берёзов', 'Яблоков']
+rospotreb = 'Тищенко'
 
-#################################################################### Описать и красиво вывести!!!
+
+def korona(list_epl, ill_epl):
+
+    return len(list_epl), ill_epl in list_epl
+
+
+count_epl, in_place = korona(employees, rospotreb)
+
+print(f'В офисе было {count_epl} сотрудников, с подозрением на коронавирус присутствовал {in_place}.')
+
+#################################################################### Описано и выведено!!!
 # Кейс 3.
 # Имеются данные о продажах некоторой аптеки:
 # Товары, которые продавала аптека на неделе: Спазмалгон (300 руб, купили 10 раз),
@@ -58,24 +58,40 @@
 # можно было получить средние данные о продажах, выручке, ценах, а также максимальное
 # и минимальное значение. Всю статистику необходимо вывести в консоль
 
-# drugs = ['Спазмалгон', 'Нуровен', 'Ризин', 'Назонекс', 'Гиперон', 'Боярышник']
-# prices = [300, 500, 124, 750, 567, 320]
-# quantity = [10, 6, 12, 4, 5, 20]
-#
-# def stat(catalog, price_list, sale_list):
-#     mean_sale = sum(sale_list) / len(sale_list)
-#     mean_price = sum(price_list) / len(price_list)
-#
-#     max_sale = max(sale_list)
-#     max_price = max(price_list)
-#
-#     min_sale = min(sale_list)
-#     min_price = min(price_list)
-#
-#     revenue = [(price_list[i] * sale_list[i]) / 7 for i in range(len(sale_list))]
-#     return mean_sale, mean_price, max_sale, max_price, min_sale, min_price, revenue
-#
+drugs = ['Спазмалгон', 'Нуровен', 'Ризин', 'Назонекс', 'Гиперон', 'Боярышник']
+prices = [300, 500, 124, 750, 567, 320]
+quantity = [10, 6, 12, 4, 5, 20]
+
+
+def stat(price_list, sale_list):
+    mean_sale = sum(sale_list) / len(sale_list)  # Находим среднее в кол-ве продаж в списке quantity
+    mean_price = sum(price_list) / len(price_list)  # Находим среднюю цену в листе prices
+
+    max_sale = max(sale_list)  # Находим максимальное значение в списке quantity
+    max_price = max(price_list)  # Находим максимальное значение в списке prices
+
+    min_sale = min(sale_list)  # Находим минимальное значение в списке quantity
+    min_price = min(price_list)  # Находим минимальное значение в списке prices
+
+    revenue = [(price_list[i] * sale_list[i]) / 7 for i in
+               range(len(sale_list))]  # Считаем среднюю выручку по товарам за неделю
+    revenue_sorted = sorted(revenue)
+
+    # result_revenue = ''.join(revenue_sorted)
+    return mean_sale, (round(mean_price), 2), max_sale, max_price, min_sale, min_price, revenue_sorted
+
+
+mean_sale, mean_price, max_sale, max_price, min_sale, min_price, revenue = stat(prices, quantity)
 # print(stat(drugs, prices, quantity))
+
+print(f'''За неделю:
+Среднее значение по продажам {mean_sale}
+Среднее значение по цене {mean_price}
+Максимальное кол-во товаров продано {max_sale}
+Максимальная продажа по цене {max_price}
+Минимальное кол-во которое было продано {min_sale}
+Минимальная цена по продажам {min_price}
+Средняя выручка за 7 дней {revenue}''')
 
 
 
@@ -117,58 +133,58 @@
 # Общие налоговые отчисления составили:
 # Сумма страховых взносов составила:
 
-# cards = [['Астахов', 'Игорь', 'Александрович', 35, 'Муж', True, 'Москва', 'маркетолог'],
-#          ['Вавилова', 'Елена', 'Сергеевна', 40, 'Жен', True, 'Таганрог', 'бухгалтер'],
-#          ['Карелин', 'Андрей', 'Васильевич', 25, 'Муж', False, 'Подольск', 'специалист'],
-#          ['Воронова', 'Мария', 'Игоревна', 30, 'Жен', False, 'Москва', 'менеджер'],
-#          ['Остроумовна', 'Карина', 'Владимировна', 44, 'Жен', True, 'Подольск', 'маркетолог'],
-#          ['Борзов', 'Владимир', 'Андреевич', 40, 'Муж', False, 'Москва', 'начальник отдела']]
-#
-# spec = ['маркетолог', 'бухгалтер', 'менеджер', 'специалист']
-# mid_manag = ['начальник отдела', 'главный бухгалтер']
-# top_manag = ['директор']
-# salary = [40000, 60000, 80000]
-#
-# ndfl = 0.13
-# social = 0.3
-#
-# def salaries(cards):
-#     for card in cards:
-#         if card[-1] in spec:
-#             card.append(salary[0])
-#         elif card[-1] in mid_manag:
-#             card.append(salary[1])
-#         elif card[-1] in top_manag:
-#             card.append(salary[2])
-#
-# salaries(cards)
-#
-# print(cards)
-#
-# def bonus(card, bonus_value):
-#     card[-1] += bonus_value
-#
-# def nalog(cards, percent):
-#     return cards[-1] * percent
-#
-# taxes = 0
-# socstrah = 0
-#
-# for card in cards:
-#     if card[-4] == True:
-#         bonus(card, 5000)
-#
-#     print(f'''{card[0]}, {card[1]}, {card[2]}
-#     {card[0-2]}, {card[-1] - nalog(card, ndfl)} ''')
-#
-#     taxes += nalog(card, ndfl)
-#     socstrah += nalog(card, social)
-#
-# print(f'''Общие налоговые отчисления составили: {taxes}
-# Сумма страховых взносов составила: {socstrah}''')
-# print(cards)
+cards = [['Астахов', 'Игорь', 'Александрович', 35, 'Муж', True, 'Москва', 'маркетолог'],
+         ['Вавилова', 'Елена', 'Сергеевна', 40, 'Жен', True, 'Таганрог', 'бухгалтер'],
+         ['Карелин', 'Андрей', 'Васильевич', 25, 'Муж', False, 'Подольск', 'специалист'],
+         ['Воронова', 'Мария', 'Игоревна', 30, 'Жен', False, 'Москва', 'менеджер'],
+         ['Остроумовна', 'Карина', 'Владимировна', 44, 'Жен', True, 'Подольск', 'маркетолог'],
+         ['Борзов', 'Владимир', 'Андреевич', 40, 'Муж', False, 'Москва', 'начальник отдела']]
 
-#################################### Решение Лейлы Ибрагимовны
+spec = ['маркетолог', 'бухгалтер', 'менеджер', 'специалист']
+mid_manag = ['начальник отдела', 'главный бухгалтер']
+top_manag = ['директор']
+salary = [40000, 60000, 80000]
+
+ndfl = 0.13
+social = 0.3
+
+def salaries(cards):
+    for card in cards:
+        if card[-1] in spec:
+            card.append(salary[0])
+        elif card[-1] in mid_manag:
+            card.append(salary[1])
+        elif card[-1] in top_manag:
+            card.append(salary[2])
+
+salaries(cards)
+
+print(cards)
+
+def bonus(card, bonus_value):
+    card[-1] += bonus_value
+
+def nalog(cards, percent):
+    return cards[-1] * percent
+
+taxes = 0
+socstrah = 0
+
+for card in cards:
+    if card[-4] == True:
+        bonus(card, 5000)
+
+    print(f'''{card[0]}, {card[1]}, {card[2]}
+    {card[0-2]}, {card[-1] - nalog(card, ndfl)} ''')
+
+    taxes += nalog(card, ndfl)
+    socstrah += nalog(card, social)
+
+print(f'''Общие налоговые отчисления составили: {taxes}
+Сумма страховых взносов составила: {socstrah}''')
+print(cards)
+
+#################################### Код Лейлы Ибрагимовны
 # cards = [['Астахов', 'Игорь', 'Александрович', 35, 'Муж', True, 'Москва', 'маркетолог'], ['Вавилова', \
 #                                                                                           'Елена', 'Сергеевна', 40,
 #                                                                                           'Жен', True, 'Таганрог',
