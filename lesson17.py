@@ -1,20 +1,20 @@
 ####################################################################
 # - - - - - - Создание словарей Работа с файлами - - - - - - - - #
 # Модуль datetime
+import string
+from datetime import datetime
 
-# from datetime import datetime
-#
-# current_time = datetime.now()
-#
-# employees = [['Иванов Иван Иванович', 'менеджер', '22/06/2020'], []]
-#
-# person = employees[0]
-# date = datetime.strptime(person[2], '%d/%m/%Y')  # employees[0][2] идентично
-# delta = (datetime.today() - date).total_seconds() / (365.25 * 24 * 60 * 60)
-#
-# print(delta)
-# print(person)
-# print(date)
+current_time = datetime.now()
+
+employees = [['Иванов Иван Иванович', 'менеджер', '22/06/2020'], []]
+
+person = employees[0]
+date = datetime.strptime(person[2], '%d/%m/%Y')  # employees[0][2] идентично
+delta = (datetime.today() - date).total_seconds() / (365.25 * 24 * 60 * 60)
+
+print(delta)
+print(person)
+print(date)
 
 ####################################################################
 # Модуль Random
@@ -28,27 +28,27 @@
 # random.choice() с random_list в качестве аргумента.
 
 
-# import random
-#
-# random_list = []
-#
-# random_list = [random.randint(1, 100) for i in range(101)]
-#
-# print(random_list)
-#
-# randomer_number = random.choice(random_list)
-# print(randomer_number)
+import random
+
+random_list = []
+
+random_list = [random.randint(1, 100) for i in range(101)]
+
+print(random_list)
+
+randomer_number = random.choice(random_list)
+print(randomer_number)
 
 ####################################################################
 # Импортирование модулей и пространство имен
 
-# import random as rd  # Переименовали random для своего усмотрения и к random можно обращаться как к локальной переменной
-#
-# random_list = []
-# random_list = [rd.randint(1, 100) for i in range(101)]
-#
-# randomer_number = rd.choice(random_list)
-# print(randomer_number)
+import random as rd  # Переименовали random для своего усмотрения и к random можно обращаться как к локальной переменной
+
+random_list = []
+random_list = [rd.randint(1, 100) for i in range(101)]
+
+randomer_number = rd.choice(random_list)
+print(randomer_number)
 
 ####################################################################
 # Задание
@@ -63,18 +63,18 @@
 # Вызовите plt.plot() с двумя переменными в качестве аргументов.
 # 6. Теперь вызовите plt.show() и запустите свой код!
 
-# from matplotlib import pyplot as plt
-# import random as rd
-#
-# number_a = range(1, 13)
-# number_b = [rd.randint(0, 1000) for i in number_a]
-#
-#
-# print(list(number_a))
-# print(number_b)
-#
-# plt.plot(number_a, number_b)
-# plt.show()
+from matplotlib import pyplot as plt
+import random as rd
+
+number_a = range(1, 13)
+number_b = [rd.randint(0, 1000) for i in number_a]
+
+
+print(list(number_a))
+print(number_b)
+
+plt.plot(number_a, number_b)
+plt.show()
 
 ####################################################################
 # Задание 1
@@ -126,66 +126,66 @@
 # отдельный список занести тех сотрудников, которые отработали в компании более 6
 # месяцев. Реализовать функцию.
 
-# from datetime import datetime
-#
-# employees = [['Иванов Иван Иванович', 'Менеджер', '22.10.2013', 250000, 'муж'],
-#              ['Сорокина Екатерина Матвеевна', 'Аналитик', '12.03.2020', 75000, 'жен'],
-#              ['Струков Иван Сергеевич', 'Старший программист', '23.04.2012', 150000, 'муж'],
-#              ['Корнеева Анна Игоревна', 'Ведущий программист', '22.02.2015', 120000, 'жен'],
-#              ['Старчиков Сергей Анатольевич', 'Младший программист', '12.11.2021', 50000, 'муж'],
-#              ['Бутенко Артем Андреевич', 'Архитектор', '12.02.2010', 200000, 'муж'],
-#              ['Савченко Алина Сергеевна', 'Старший аналитик', '13.04.2022', 100000, 'жен']]
-#
-#
-# def programmer_bonus(emp_list, bonus_rate):
-#     for person in emp_list:
-#         if 'программист' in person[1].lower() and datetime.now().month == 9:
-#             person[3] += person[3] * bonus_rate
-#     return emp_list
-#
-#
-# # print(programmer_bonus(employees, 0.03))
-#
-# def gender_holiday(emp_list, bonus):
-#     for person in emp_list:
-#         if person[-1].lower() == 'жен' and datetime.now().month == 3 or \
-#                 person[-1].lower() == 'муж' and datetime.now().month == 2:
-#             person[3] += bonus
-#
-#     return emp_list
-#
-#
-# # print(gender_holiday(employees, 2000))
-#
-# def indexing(emp_list, exp, rate, rate1):
-#     for person in emp_list:
-#         person[2] = datetime.strptime(person[2], '%d.%m.%Y')
-#         # experience = (datetime.today() - person[2]).total_seconds() / (365.25 * 24 * 60 * 60)
-#
-#         experience = (datetime.today() - person[2]).days / 365.25  # Аналогично выше
-#         if experience >= exp:  # Проверяем стаж больше 10 лет или нет
-#             person[3] += person[3] * rate  # Повышенная ставка 7%
-#         else:
-#             person[3] += person[3] * rate1  # Обычная ставка 5%
-#
-#     return emp_list
-#
-#
-# # print(indexing(employees, 10, 0.07, 0.05))
-#
-# def vacation(emp_list):
-#     vac_list = []
-#     for person in emp_list:
-#         person[2] = datetime.strptime(person[2], '%d.%m.%Y')
-#         experience = (datetime.today() - person[2]).days / 365.25
-#         if experience >= 0.5:
-#             vac_list.append(person)
-#     return vac_list
-#
-#
-# print(vacation(employees))
+from datetime import datetime
 
-####################################################################
+employees = [['Иванов Иван Иванович', 'Менеджер', '22.10.2013', 250000, 'муж'],
+             ['Сорокина Екатерина Матвеевна', 'Аналитик', '12.03.2020', 75000, 'жен'],
+             ['Струков Иван Сергеевич', 'Старший программист', '23.04.2012', 150000, 'муж'],
+             ['Корнеева Анна Игоревна', 'Ведущий программист', '22.02.2015', 120000, 'жен'],
+             ['Старчиков Сергей Анатольевич', 'Младший программист', '12.11.2021', 50000, 'муж'],
+             ['Бутенко Артем Андреевич', 'Архитектор', '12.02.2010', 200000, 'муж'],
+             ['Савченко Алина Сергеевна', 'Старший аналитик', '13.04.2022', 100000, 'жен']]
+
+
+def programmer_bonus(emp_list, bonus_rate):
+    for person in emp_list:
+        if 'программист' in person[1].lower() and datetime.now().month == 9:
+            person[3] += person[3] * bonus_rate
+    return emp_list
+
+
+# print(programmer_bonus(employees, 0.03))
+
+def gender_holiday(emp_list, bonus):
+    for person in emp_list:
+        if person[-1].lower() == 'жен' and datetime.now().month == 3 or \
+                person[-1].lower() == 'муж' and datetime.now().month == 2:
+            person[3] += bonus
+
+    return emp_list
+
+
+# print(gender_holiday(employees, 2000))
+
+def indexing(emp_list, exp, rate, rate1):
+    for person in emp_list:
+        person[2] = datetime.strptime(person[2], '%d.%m.%Y')
+        # experience = (datetime.today() - person[2]).total_seconds() / (365.25 * 24 * 60 * 60)
+
+        experience = (datetime.today() - person[2]).days / 365.25  # Аналогично выше
+        if experience >= exp:  # Проверяем стаж больше 10 лет или нет
+            person[3] += person[3] * rate  # Повышенная ставка 7%
+        else:
+            person[3] += person[3] * rate1  # Обычная ставка 5%
+
+    return emp_list
+
+
+# print(indexing(employees, 10, 0.07, 0.05))
+
+def vacation(emp_list):
+    vac_list = []
+    for person in emp_list:
+        person[2] = datetime.strptime(person[2], '%d.%m.%Y')
+        experience = (datetime.today() - person[2]).days / 365.25
+        if experience >= 0.5:
+            vac_list.append(person)
+    return vac_list
+
+
+print(vacation(employees))
+
+####################################################################!!! Описать код !!!
 # Задание 2
 # В торговом центре проводится розыгрыш призов. Для получения приза необходимо
 # загадать число. Случайным образом администраторы выбирают второе число в интервале
@@ -196,25 +196,56 @@
 # только в консоль выведено 5 игроков, розыгрыш заканчивается
 
 import random
-
-random_list = []
-
-random_list = [random.randint(1, 9) for i in range(30)]
-
-
-
-
-####################################################################
-#
-
-####################################################################
-#
-
-####################################################################
-#
+random_list = [random.randint(1, 20) for i in range(20)]  # формируем список чисел (список игроков)]
+num = random.randint(1, 9)  # формируем загаданное число от 1 до 9
+# не нужно. рандинт возвращает число. num_str = str(num)  # переводим число в строку
+def sum_od(n, rand_list):  # передаём загаданное число и кол-во игроков
+    priz_num = []  # Призовые номера
+    for num in rand_list:  #
+        x = num % 10  # Проверяем остаток от деления
+        y = num // 10  #
+        if (x + y) % n == 0:  # Делится ли число на загаданное
+            priz_num.append(num)  #
+    return priz_num  #
+print(num)  # Загаданное число
+print(random_list)  # Смотрим числа, которые делятся без остатка
+print(sum_od(num, random_list))  # Кол-во игроков
 
 ####################################################################
-#
+# Задание 1. Напишите программу, которая с помощью модуля random моделирует броски
+# монеты. Программа принимает на вход количество попыток и выводит результаты
+# бросков: Орел или Решка (каждое на отдельной строке).
+
+import random
+
+num = int(input())
+print(*["Орёл" if random.randint(0, 1) else "Решка" for i in range(num)], sep="\n")
 
 ####################################################################
-#
+# Напишите программу, которая с помощью модуля random моделирует броски
+# игрального кубика c 6 гранями. Программа принимает на вход количество попыток и
+# выводит результаты бросков — выпавшее число, которое написано на грани кубика (каждое
+# на отдельной строке).
+
+import random
+
+for i in range(int(input())):
+    print(random.randint(1, 6))
+
+####################################################################
+# Напишите программу, которая с помощью модуля random генерирует
+# случайный пароль. Программа принимает на вход длину пароля и выводит случайный
+# пароль, содержащий только символы английского алфавита a..z, A..Z (в нижнем и верхнем
+# регистре)
+
+import random
+import string
+
+pass_list = list(string.ascii_lowercase) + list(string.ascii_uppercase)
+password = ''
+
+for n in range(10):
+    password += random.choice(pass_list)
+print(password)
+
+
