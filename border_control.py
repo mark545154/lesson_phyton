@@ -1,10 +1,12 @@
 ###################################################################################
 # 1. Что такое список
 
-
 ###################################################################################
 # 2. Что такое список?
 
+# Это тип данных. Предназначенный для хранения набора или последовательности разных элементов.
+# Т.е. упорядоченный набор элементов.
+# Список всегда начинается [ и заканчивается ] вот такими квадратными скобками.
 
 ###################################################################################
 # 3. Программист, разрабатывающий приложение для
@@ -18,6 +20,12 @@
 # На каждый параметр необходимо создать отдельную переменную.
 # Вывести результат в консоль
 
+# num_contract = input('Введите номер договора: ').upper()  # только заглавные буквы
+# surname = input('Введите фамилию: ').title()  # начинаться с Заглавной буквы
+# name = input('Введите имя: ').title()  # начинаться с Заглавной буквы
+# type_doc = input('Введите тип документа: ').lower()  # только строчные буквы
+#
+# print(type_doc, num_contract, surname, name)
 
 ###################################################################################
 # 4. Имеются данные о продажах некоторого магазина:
@@ -30,8 +38,70 @@
 # Подставка-котик (320 руб., купили 20 раз).
 # Необходимо создать файл csv, который содержит название товара,
 # стоимость и количество покупок,
+
 # разработать приложение (использовать словари),
 # чтобы на выходе можно было получить средние количество продаж,
 # выручке, ценах, а также максимальное и минимальное значение,
 # самый продаваемый товар, самый непопулярный товар.
 # Всю статистику необходимо вывести в консоль и сохранить в отдельный файл.
+
+import csv
+
+product_list = [{'name': 'Картон', 'price': 300, 'purchases': 10},
+                {'name': 'Бумага', 'price': 500, 'purchases': 6},
+                {'name': 'Ножницы', 'price': 124, 'purchases': 12},
+                {'name': 'Папка', 'price': 750, 'purchases': 4},
+                {'name': 'Набор профессиональной акварели', 'price': 567, 'purchases': 5},
+                {'name': 'Подставка-котик', 'price': 320, 'purchases': 20}]
+
+with open('sales.csv', 'w') as sal_csv:
+    fields = ['name', 'price', 'purchases']
+    record = csv.DictWriter(sal_csv, fieldnames=fields)
+    record.writeheader()
+
+    for index in product_list:
+        record.writerow(index)
+sal_csv.close()
+
+
+def file_loading(file_name, delim, column):
+    result = []
+    with open(file_name) as file_csv:
+        file_reader = csv.DictReader(file_csv, delimiter=delim)
+        for row in file_reader:
+            result.append(row[column])
+    return result
+
+
+def sals(price_list, sale_list):
+    ave_sale = sum(sale_list) / len(sale_list)  # Находим среднее в кол-ве продаж в списке purchases
+    ave_price = sum(price_list) / len(price_list)  # Находим среднюю цену в листе price
+
+    max_sale = max(sale_list)  # Находим максимальное значение в списке purchases
+    max_price = max(price_list)  # Находим максимальное значение в списке price
+
+    min_sale = min(sale_list)  # Находим минимальное значение в списке purchases
+    min_price = min(price_list)  # Находим минимальное значение в списке price
+
+    revenue = [(price_list[i]) * sale_list[i] / 7 for i in range(len(sale_list))]
+    sor_rev = sorted(revenue)
+    return ave_sale, ave_price, max_sale, max_price, min_sale, min_price, sor_rev
+
+
+quantity = file_loading('sales.csv', ',', 'purchases')
+price_sale = file_loading('sales.csv', ',', 'price')
+print(quantity, price_sale)  # Выводит результат, ниже код не срабатывает
+
+# ave_sale, ave_price, max_sale, max_price, min_sale, min_price, sor_rev = file_loading(price_sale, quantity)
+
+
+# print(f'''За неделю:
+# Среднее значение по продажам {ave_sale}
+# Среднее значение по цене {ave_price}
+# Максимальное кол-во товаров продано {max_sale}
+# Максимальная продажа по цене {max_price}
+# Минимальное кол-во которое было продано {min_sale}
+# Минимальная цена по продажам {min_price}
+# Средняя выручка за 7 дней {sor_rev}''')
+
+

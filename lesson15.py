@@ -396,7 +396,7 @@ list(test_scores.values())
 # 3. Выведите в консоль переменную total_exercises
 
 num_exercises = {"functions": 10, "syntax": 13, "control flow": 15,
-                 "loops":22, "lists": 19, "classes": 18, "dictionaries": 18}
+                 "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}
 
 total_num = 0
 
@@ -415,7 +415,7 @@ print(num_exercises)
 biggest_brands = {"Apple": 184, "Google": 141.7, "Microsoft": 80, "Coca-Cola": 69.7, "Amazon": 64.8}
 
 summ = 0
-for company,value in biggest_brands.items():
+for company, value in biggest_brands.items():
     print(company + ' has a value of ' + str(value) + ' billion dollars. ')
     summ += value
 
