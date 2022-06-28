@@ -69,7 +69,7 @@ def file_loading(file_name, delim, column):
     with open(file_name) as file_csv:
         file_reader = csv.DictReader(file_csv, delimiter=delim)
         for row in file_reader:
-            result.append(row[column])
+            result.append(float(row[column]))
     return result
 
 
@@ -83,16 +83,39 @@ def sals(price_list, sale_list):
     min_sale = min(sale_list)  # Находим минимальное значение в списке purchases
     min_price = min(price_list)  # Находим минимальное значение в списке price
 
-    revenue = [(price_list[i]) * sale_list[i] / 7 for i in range(len(sale_list))]
+    revenue = [(price_list[i]) * sale_list[i] / 10 for i in range(len(sale_list))]  # Среднее кол-во продаж за 10 дней
     sor_rev = sorted(revenue)
-    return ave_sale, ave_price, max_sale, max_price, min_sale, min_price, sor_rev
+    return ave_sale, (round(ave_price), 1), max_sale, max_price, min_sale, min_price, sor_rev
 
 
 quantity = file_loading('sales.csv', ',', 'purchases')
 price_sale = file_loading('sales.csv', ',', 'price')
-print(quantity, price_sale)  # Выводит результат, ниже код не срабатывает
 
-# ave_sale, ave_price, max_sale, max_price, min_sale, min_price, sor_rev = file_loading(price_sale, quantity)
+
+ave_sale, ave_price, max_sale, max_price, min_sale, min_price, sor_rev = sals(price_sale, quantity)
+
+popular_product = {'name': 0, 'price': 0, 'purchases': 0}
+
+for index in range(len(product_list)):
+    if product_list[index]['purchases'] > popular_product['purchases']:
+        popular_product['price'] = product_list[index]['price']
+        popular_product['purchases'] = product_list[index]['purchases']
+        popular_product['name'] = product_list[index]['name']
+
+print(popular_product)
+
+
+
+
+
+# no_popular_product = {'name': 0, 'price': 0, 'purchases': 0}
+#
+# for index in range(len(product_list)):
+#     if product_list[index]['purchases'] < no_popular_product['purchases']:
+#         no_popular_product['price'] = product_list[index]['price']
+#         no_popular_product['purchases'] = product_list[index]['purchases']
+#         no_popular_product['name'] = product_list[index]['name']
+# print(no_popular_product)
 
 
 # print(f'''За неделю:
@@ -102,6 +125,6 @@ print(quantity, price_sale)  # Выводит результат, ниже ко�
 # Максимальная продажа по цене {max_price}
 # Минимальное кол-во которое было продано {min_sale}
 # Минимальная цена по продажам {min_price}
-# Средняя выручка за 7 дней {sor_rev}''')
-
-
+# Средняя выручка за 7 дней {sor_rev}
+# Самый продаваемый товар {popular_product}
+# Самый непопулярный товар {no_popular_product}''')
