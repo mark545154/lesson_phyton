@@ -131,6 +131,7 @@ responce = responce.json()
 print(responce)  # Выведет все данные json() файла
 print(responce['current']['temp_c'])  # 33.0   выводит температуру в градусах C на 26.06.2022
 
+
 ###################################################################################
 # Упражнение 2.
 # Напишите функцию read_last(lines, file), которая будет открывать
@@ -146,8 +147,30 @@ print(responce['current']['temp_c'])  # 33.0   выводит температу
 # Даже толстый бегемот, неуклюжий бегемот
 # От утят не отстает, кряхтит "кря-кря"
 
+def read_last(lines, file):
+    if lines > 0:
+        with open(file, encoding='UTF-8') as song:
+            song_lines = song.readlines()[-lines:]
+            for index in song_lines:
+                print(index.strip())
+
+
+read_last(10, 'song.txt')
+
 
 ###################################################################################
 # Упражнение 3. Требуется реализовать функцию longest_words(file), которая выводит
 # слово, имеющее максимальную длину (или список слов, если таковых несколько).
 # Протестировать на примере файла «song.txt».
+
+def longest_words(file):
+    with open(file, encoding='UTF-8') as song:
+        words = song.read().split()
+        max_length = len(max(words, key=len))
+        words_length = [word for word in words if len(word) == max_length]
+        if len(words_length) == 1:
+            return words_length[0]
+        return words_length
+
+
+print(longest_words('song.txt'))
