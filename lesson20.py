@@ -8,11 +8,11 @@
 # В следующих упражнениях мы узнаем, как создавать одномерные и двумерные
 # массивы и выполнять основные операции с массивами.
 
-# import numpy as np
-#
-# my_list = [1, 2, 3, 4, 5, 6]
-# my_array = np.array(my_list)
-# print(my_array)
+import numpy as np
+
+my_list = [1, 2, 3, 4, 5, 6]
+my_array = np.array(my_list)
+print(my_array)
 
 ###################################################################################
 # Задание
@@ -21,11 +21,11 @@
 # 92, 94, 88, 91, 87
 # Создайте массив NumPy с этими значениями и сохраните его под именем test_1.
 
-# import numpy as np
-#
-# test_1 = np.array([92, 94, 88, 91, 87])
-#
-# print(test_1)
+import numpy as np
+
+test_1 = np.array([92, 94, 88, 91, 87])
+
+print(test_1)
 
 ###################################################################################
 # Создание массива из CSV
@@ -35,10 +35,10 @@
 # помощью функции np.genfromtxt ():
 # Рассмотрим следующий CSV-файл sample.csv
 
-# import numpy as np
-#
-# test2 = np.genfromtxt('sample.csv', delimiter=',')
-# print(type(test2))
+import numpy as np
+
+test2 = np.genfromtxt('sample.csv', delimiter=',')
+print(type(test2))
 
 ###################################################################################
 # Операции с массивами NumPy
@@ -47,21 +47,21 @@
 # операция позволяет быстро выполнять операцию, например сложение, над каждым
 # элементом массива.
 
-# import numpy as np
-#
-# my_list = [1, 2, 3, 4, 5]
-#
-# my_list3 = [item + 3 for item in my_list]
-#
-# print(my_list3)
-#
-# my_array = np.array(my_list)
-# # my_array3 = my_array + 3
-# # my_array3 = my_array ** 2  # Возводим в степень
-# # my_array3 = np.sqrt(my_array)  # Корень квадратный из числа
-# my_array3 = np.sqrt(my_array[0])  # Корень квадратный из числа к первому числу
-#
-# print(my_array3)
+import numpy as np
+
+my_list = [1, 2, 3, 4, 5]
+
+my_list3 = [item + 3 for item in my_list]
+
+print(my_list3)
+
+my_array = np.array(my_list)
+# my_array3 = my_array + 3
+# my_array3 = my_array ** 2  # Возводим в степень
+# my_array3 = np.sqrt(my_array)  # Корень квадратный из числа
+my_array3 = np.sqrt(my_array[0])  # Корень квадратный из числа к первому числу
+
+print(my_array3)
 
 ###################################################################################
 # Задание
@@ -69,12 +69,12 @@
 # Но оказывается, что в одном из вопросов третьего теста была ошибка. Дайте каждому
 # студенту два дополнительных балла и сохраните новый массив в test_3_fixed
 
-# import numpy as np
-#
-# test_3 = np.array([87, 85, 72, 90, 92])
-# test_3_fixed = test_3 + 2
-#
-# print(test_3_fixed)
+import numpy as np
+
+test_3 = np.array([87, 85, 72, 90, 92])
+test_3_fixed = test_3 + 2
+
+print(test_3_fixed)
 
 
 ###################################################################################
@@ -84,14 +84,14 @@
 # При добавлении или вычитании массивов в NumPy каждый элемент будет добавлен /
 # вычтен к соответствующему элементу.
 
-# import numpy as np
-#
-# my_list1 = np.array([1, 2, 3, 4])
-# my_list2 = np.array([1, 2, 3, 4])
-#
-# my_list3 = my_list1 + my_list2  # Складывает только одинаковые по длине массивы
-#
-# print(my_list3)
+import numpy as np
+
+my_list1 = np.array([1, 2, 3, 4])
+my_list2 = np.array([1, 2, 3, 4])
+
+my_list3 = my_list1 + my_list2  # Складывает только одинаковые по длине массивы
+
+print(my_list3)
 
 ###################################################################################
 # Задание
@@ -103,17 +103,17 @@
 # средний балл для каждого ученика. Сохраните ответ в переменной final_grade.
 # 3. Выведите результат в консоль
 
-# import numpy as np
-#
-# test_1 = np.array([92, 94, 88, 91, 87])
-# test_2 = np.array([79, 100, 86, 93, 91])
-# test_3 = np.array([87, 85, 72, 90, 92])
-#
-# total_grade = test_1 + test_2 + test_3
-# print(total_grade)
-#
-# final_grade = total_grade / 3
-# print(final_grade)
+import numpy as np
+
+test_1 = np.array([92, 94, 88, 91, 87])
+test_2 = np.array([79, 100, 86, 93, 91])
+test_3 = np.array([87, 85, 72, 90, 92])
+
+total_grade = test_1 + test_2 + test_3
+print(total_grade)
+
+final_grade = total_grade / 3
+print(final_grade)
 
 
 ###################################################################################
@@ -125,16 +125,16 @@
 # одномерных массивах для каждого теста:
 
 
-# import numpy as np
-#
-# test_1 = np.array([92, 94, 88, 91, 87])
-# test_2 = np.array([79, 100, 86, 93, 91])
-# test_3 = np.array([87, 85, 72, 90, 92])
-#
-# # Но мы могли бы также сохранить все эти данные в одном двумерном массиве
-# np.array([[92, 94, 88, 91, 87],
-#           [79, 100, 86, 93, 91],
-#           [87, 85, 72, 90, 92]])
+import numpy as np
+
+test_1 = np.array([92, 94, 88, 91, 87])
+test_2 = np.array([79, 100, 86, 93, 91])
+test_3 = np.array([87, 85, 72, 90, 92])
+
+# Но мы могли бы также сохранить все эти данные в одном двумерном массиве
+np.array([[92, 94, 88, 91, 87],
+          [79, 100, 86, 93, 91],
+          [87, 85, 72, 90, 92]])
 
 
 ###################################################################################
@@ -149,55 +149,55 @@
 # орел, орел, орел. Создайте новый массив, который представляет оба результата как
 # один эксперимент. Сохраните новый массив в coin_toss_again
 
-# import numpy as np
-#
-# coin_toss = [1, 0, 0, 1, 0]
-# coin_toss2 = [0, 0, 1, 1, 1]
-#
-# coin_toss_again = np.array([coin_toss, coin_toss2])
-# print(coin_toss_again)
+import numpy as np
+
+coin_toss = [1, 0, 0, 1, 0]
+coin_toss2 = [0, 0, 1, 1, 1]
+
+coin_toss_again = np.array([coin_toss, coin_toss2])
+print(coin_toss_again)
 
 ###################################################################################
 # Выбор элементов из одномерного массива
 # NumPy позволяет нам выбирать элементы из массива, используя их индексы. Рассмотрим
 # одномерный массив
 
-# import numpy as np
-#
-# test_1 = np.array([92, 94, 88, 91, 87])
-#
-# # print(test_1[2:-1])
-#
-# coin_toss_again = np.array([[1, 0, 0, 1, 0],
-#                             [0, 0, 1, 1, 1]])
-#
-# print(coin_toss_again[0:2, 2:4])
+import numpy as np
+
+test_1 = np.array([92, 94, 88, 91, 87])
+
+# print(test_1[2:-1])
+
+coin_toss_again = np.array([[1, 0, 0, 1, 0],
+                            [0, 0, 1, 1, 1]])
+
+print(coin_toss_again[0:2, 2:4])
 
 ###################################################################################
 # Задание
 # 1. Вернемся к результатам тестов наших учеников. В следующей таблице показаны
 # все три массива тестов, выровненные по именам учащихся
 
-# import numpy as np
-#
-# tests = np.array([[92, 94, 88, 91, 87],
-#                   [79, 100, 86, 93, 91],
-#                   [87, 85, 72, 90, 92]])
-#
-# jeremy_test_2 = tests[1, 3]  # 93
-# print(jeremy_test_2)
-#
-# manual_adwoa_test_1 = tests[0, 1:3]
-# print(manual_adwoa_test_1)
-#
-# cody_test3 = tests[2, -1]
-# print(cody_test3)
-#
-# tanya_test2 = tests[1, 0]
-# print(tanya_test2)
-#
-# test_test = tests[0:, -3:]
-# print(test_test)
+import numpy as np
+
+tests = np.array([[92, 94, 88, 91, 87],
+                  [79, 100, 86, 93, 91],
+                  [87, 85, 72, 90, 92]])
+
+jeremy_test_2 = tests[1, 3]  # 93
+print(jeremy_test_2)
+
+manual_adwoa_test_1 = tests[0, 1:3]
+print(manual_adwoa_test_1)
+
+cody_test3 = tests[2, -1]
+print(cody_test3)
+
+tanya_test2 = tests[1, 0]
+print(tanya_test2)
+
+test_test = tests[0:, -3:]
+print(test_test)
 
 ###################################################################################
 # Логические операции с массивами
@@ -206,14 +206,14 @@
 # массиве больше 5. Мы можем легко написать код, который проверяет наличие значения
 # True для каждого элемента в массиве, без использования цикла for:
 
-# import numpy as np
-#
-# a = np.array([10, 2, 2, 4, 5, 3, 9, 8, 9, 7])
-# b = a[(a > 5) & (a < 10)]  # [9 8 9 7]
-# print(b)
-#
-# # print(a[a > 5])  # [10  9  8  9  7]
-# # print(a > 5)  # [ True False False False False False  True  True  True  True]
+import numpy as np
+
+a = np.array([10, 2, 2, 4, 5, 3, 9, 8, 9, 7])
+b = a[(a > 5) & (a < 10)]  # [9 8 9 7]
+print(b)
+
+# print(a[a > 5])  # [10  9  8  9  7]
+# print(a > 5)  # [ True False False False False False  True  True  True  True]
 
 ###################################################################################
 # Задание
@@ -227,15 +227,15 @@
 # (включительно) и сохраняет их в переменной с именем just_right.
 # 4. Выведите в консоль каждый массив
 
-# import numpy as np
-#
-# porridge = np.array([79, 65, 50, 63, 56, 90, 85, 98, 79, 51])
-# cold = porridge[porridge < 60]
-# print(cold)
-# hot = porridge[porridge > 80]
-# print(hot)
-# just_right = porridge[(porridge > 60) & (porridge < 80)]
-# print(just_right)
+import numpy as np
+
+porridge = np.array([79, 65, 50, 63, 56, 90, 85, 98, 79, 51])
+cold = porridge[porridge < 60]
+print(cold)
+hot = porridge[porridge > 80]
+print(hot)
+just_right = porridge[(porridge > 60) & (porridge < 80)]
+print(just_right)
 
 ###################################################################################
 # Задание
@@ -265,19 +265,19 @@
 # Выберите все температуры ниже 50 или выше 60 градусов и сохраните их в новом
 # массиве temperature_extremes
 
-# import numpy as np
-#
-# temp = np.genfromtxt('temperature_data.csv', delimiter=',')
-# # print(temp)
-# temperature_fixed = temp+3
-# # print(temperature_fixed)
-# monday_temperas = temperature_fixed[0]
-# # print(monday_temperas)
-# # thursday_friday_morning = temperature_fixed[3:, 1]  # [44.1 43.9]
-# thursday_friday_morning = temperature_fixed[-2:, 1]  # [44.1 43.9] тоже самое
-# # print(thursday_friday_morning)
-# temperature_extremes = temperature_fixed[(temperature_fixed < 50) | (temperature_fixed > 60)]
-# print(temperature_extremes)  # [46.6 48.1 61.8 47.  61.3 49.7 47.2 60.9 49.5 47.1 60.6 49.2 46.9 60.2]
+import numpy as np
+
+temp = np.genfromtxt('temperature_data.csv', delimiter=',')
+# print(temp)
+temperature_fixed = temp+3
+# print(temperature_fixed)
+monday_temperas = temperature_fixed[0]
+# print(monday_temperas)
+# thursday_friday_morning = temperature_fixed[3:, 1]  # [44.1 43.9]
+thursday_friday_morning = temperature_fixed[-2:, 1]  # [44.1 43.9] тоже самое
+# print(thursday_friday_morning)
+temperature_extremes = temperature_fixed[(temperature_fixed < 50) | (temperature_fixed > 60)]
+print(temperature_extremes)  # [46.6 48.1 61.8 47.  61.3 49.7 47.2 60.9 49.5 47.1 60.6 49.2 46.9 60.2]
 
 ###################################################################################
 # Пекарня Бетти
@@ -317,8 +317,3 @@ grocery_list = cookie + double_batch
 print(grocery_list)
 
 
-###################################################################################
-#
-
-###################################################################################
-#
