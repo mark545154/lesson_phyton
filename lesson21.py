@@ -499,6 +499,7 @@ print('Стандартное отклонение набора, будет ра
 
 import numpy as np
 
+
 data_list = np.genfromtxt('Nedvig2.csv', delimiter=';')
 np.set_printoptions(suppress=True)
 # print(data_list)
@@ -540,6 +541,12 @@ median_val = np.median(data_list, axis=0)
 
 # Разделить набор данных на три отдельных набора данных по признаку квартир
 # (отдельно однокомнатные, двухкомнатные, четырёхкомнатные)
+if min_val[0] < average_value[0]:
+    one_room = min_val[0]
+    print('Однокомнатная квартира: ', one_room)
+elif average_value[0] < max_val[0]:
+    two_room = average_value[0]
+    print('Двухкомнатная квартира: ', two_room)
 
 
 # Рассчитать показатели из 1–4 пункта для каждого из наборов данных
