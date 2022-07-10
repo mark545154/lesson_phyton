@@ -10,13 +10,13 @@
 # его в файл Python.
 # Модуль pandas обычно импортируется в начало файла Python под псевдонимом pd
 
-# import pandas as pd
-#
-# df = pd.DataFrame({'name': ['John Smith', 'Jane Doe', 'Joe Schmo'],
-#                    'address': ['123 Main St.', '456 Maple Ave.', '789 Broadway'],
-#                    'age': [34, 28, 51]})
-#
-# print(df)
+import pandas as pd
+
+df = pd.DataFrame({'name': ['John Smith', 'Jane Doe', 'Joe Schmo'],
+                   'address': ['123 Main St.', '456 Maple Ave.', '789 Broadway'],
+                   'age': [34, 28, 51]})
+
+print(df)
 
 
 ###################################################################################
@@ -25,12 +25,12 @@
 # содержащий информацию о ваших продуктах.
 # Создайте DataFrame со следующими данными, которые вам отправил менеджер по запасам:
 
-# import pandas as pd
-#
-# df = pd.DataFrame({'Product ID': range(1, 5),
-#                    'Product Name': ['t-shirt', 't-shirt', 'skirt', 'skirt'],
-#                    'Color': ['blue', 'green', 'red', 'black']})
-# print(df)
+import pandas as pd
+
+df = pd.DataFrame({'Product ID': range(1, 5),
+                   'Product Name': ['t-shirt', 't-shirt', 'skirt', 'skirt'],
+                   'Color': ['blue', 'green', 'red', 'black']})
+print(df)
 
 
 ###################################################################################
@@ -39,16 +39,16 @@
 # Например, вы можете передать список списков, каждый из которых представляет собой строку
 # данных. Используйте столбцы аргумента ключевого слова, чтобы передать список имен столбцов
 
-# import pandas as pd
-#
-# df2 = pd.DataFrame([
-#     ['John Smith', '123 Main St.', 34],
-#     ['Jane Doe', '456 Maple Ave.', 28],
-#     ['Joe Schmo', '789 Broadway', 51]
-# ],
-#     columns=['name', 'address', 'age'])
-#
-# print(df2)
+import pandas as pd
+
+df2 = pd.DataFrame([
+    ['John Smith', '123 Main St.', 34],
+    ['Jane Doe', '456 Maple Ave.', 28],
+    ['Joe Schmo', '789 Broadway', 51]
+],
+    columns=['name', 'address', 'age'])
+
+print(df2)
 
 ###################################################################################
 # Задание
@@ -56,17 +56,17 @@
 # DataFrame с информацией о различных местоположениях ваших магазинов.
 # Используйте список списков для создания DataFrame со следующими данными:
 
-# import pandas as pd
-#
-# pita = pd.DataFrame([
-#     [1, 'San Diego', 100],
-#     [2, 'Los Angeles', 120],
-#     [3, 'San Francisco', 90],
-#     [4, 'Sacramento', 115]
-# ],
-#     columns=['Store ID ', 'Location', 'Number of Employees'])
-#
-# print(pita)
+import pandas as pd
+
+pita = pd.DataFrame([
+    [1, 'San Diego', 100],
+    [2, 'Los Angeles', 120],
+    [3, 'San Francisco', 90],
+    [4, 'Sacramento', 115]
+],
+    columns=['Store ID ', 'Location', 'Number of Employees'])
+
+print(pita)
 
 ###################################################################################
 # Переменные, разделенные запятыми (CSV)
@@ -81,17 +81,17 @@
 # Первая строка CSV содержит заголовки столбцов. Все последующие строки содержат
 # значения. Заголовок каждого столбца и каждая переменная разделяются запятыми:
 
-# import pandas as pd
-#
-# df2 = pd.read_csv('sample1.csv', delimiter=',')
-#
-# # print(df2)
-# # print(df2.head(3))  # Выводит три строки которые Вы указали
-# # print(df2.tail(2))  # Выводит последние строки которые Вы указали
-# # print(df2.info())  # Выводит информацию, анализ данных в файле
-# # print(df2['City'])  # Выводит столбец который мы указываем
-# print(df2.City)  # Выводит тоже что и выше. Только название столбца должно быть одним словом
-# # df2.to_csv('new.csv')  # Записываем новый файл csv
+import pandas as pd
+
+df2 = pd.read_csv('sample1.csv', delimiter=',')
+
+# print(df2)
+# print(df2.head(3))  # Выводит три строки которые Вы указали
+# print(df2.tail(2))  # Выводит последние строки которые Вы указали
+# print(df2.info())  # Выводит информацию, анализ данных в файле
+# print(df2['City'])  # Выводит столбец который мы указываем
+print(df2.City)  # Выводит тоже что и выше. Только название столбца должно быть одним словом
+# df2.to_csv('new.csv')  # Записываем новый файл csv
 
 
 ###################################################################################
@@ -102,27 +102,27 @@
 # Вы хотите проанализировать, что происходит на севере. Создайте переменную с именем
 # clinic_north, которая содержит ТОЛЬКО данные из столбца clinic_north
 
-# import pandas as pd
-#
-# df = pd.DataFrame([
-#     ['January', 100, 100, 23, 100],
-#     ['February', 51, 45, 145, 45],
-#     ['March', 81, 96, 65, 96],
-#     ['April', 80, 80, 54, 180],
-#     ['May', 51, 54, 54, 154],
-#     ['June', 112, 109, 79, 129]],
-#     columns=['month', 'clinic_east',
-#              'clinic_north', 'clinic_south',
-#              'clinic_west']
-# )
-#
-# # print(df['clinic_north'])
-# # print(type(df['clinic_north']))  # <class 'pandas.core.series.Series'>  Series - столбец(строка) из этой таблички
-# # print(type(df))  # <class 'pandas.core.frame.DataFrame'> DataFrame - это многомерный массив
-# # print(df[['month', 'clinic_north']])  # Несколько столбцов - подаём список столбцов
-# # print(df[['month', 'clinic_north']].head(2))  # Несколько столбцов - по указанному кол-ву
-# # print(df[['month', 'clinic_north']].tail(2))  # Работает так же как с tail (2)-кол-во строк которые нужно вывести
-# print(df[['month', 'clinic_north']].info(2))  # Работает так же как с info  (2)-кол-во строк которые нужно вывести
+import pandas as pd
+
+df = pd.DataFrame([
+    ['January', 100, 100, 23, 100],
+    ['February', 51, 45, 145, 45],
+    ['March', 81, 96, 65, 96],
+    ['April', 80, 80, 54, 180],
+    ['May', 51, 54, 54, 154],
+    ['June', 112, 109, 79, 129]],
+    columns=['month', 'clinic_east',
+             'clinic_north', 'clinic_south',
+             'clinic_west']
+)
+
+# print(df['clinic_north'])
+# print(type(df['clinic_north']))  # <class 'pandas.core.series.Series'>  Series - столбец(строка) из этой таблички
+# print(type(df))  # <class 'pandas.core.frame.DataFrame'> DataFrame - это многомерный массив
+# print(df[['month', 'clinic_north']])  # Несколько столбцов - подаём список столбцов
+# print(df[['month', 'clinic_north']].head(2))  # Несколько столбцов - по указанному кол-ву
+# print(df[['month', 'clinic_north']].tail(2))  # Работает так же как с tail (2)-кол-во строк которые нужно вывести
+print(df[['month', 'clinic_north']].info(2))  # Работает так же как с info  (2)-кол-во строк которые нужно вывести
 
 
 ###################################################################################
@@ -133,23 +133,23 @@
 # 2. Когда мы выбираем несколько столбцов, получаем ли мы серию или DataFrame?
 # После того как вы создали переменную, введите команду:
 
-# import pandas as pd
-#
-# df = pd.DataFrame([
-#     ['January', 100, 100, 23, 100],
-#     ['February', 51, 45, 145, 45],
-#     ['March', 81, 96, 65, 96],
-#     ['April', 80, 80, 54, 180],
-#     ['May', 51, 54, 54, 154],
-#     ['June', 112, 109, 79, 129]],
-#     columns=['month', 'clinic_east',
-#              'clinic_north', 'clinic_south',
-#              'clinic_west']
-# )
-#
-# clinic_north_south = df[['clinic_north', 'clinic_south']]
-# # print(type(clinic_north_south))  # <class 'pandas.core.frame.DataFrame'>
-# print(df.iloc[1])  # Выводим строки с помощью функции iloc  [1]-обращение к конкретной строке
+import pandas as pd
+
+df = pd.DataFrame([
+    ['January', 100, 100, 23, 100],
+    ['February', 51, 45, 145, 45],
+    ['March', 81, 96, 65, 96],
+    ['April', 80, 80, 54, 180],
+    ['May', 51, 54, 54, 154],
+    ['June', 112, 109, 79, 129]],
+    columns=['month', 'clinic_east',
+             'clinic_north', 'clinic_south',
+             'clinic_west']
+)
+
+clinic_north_south = df[['clinic_north', 'clinic_south']]
+# print(type(clinic_north_south))  # <class 'pandas.core.frame.DataFrame'>
+print(df.iloc[1])  # Выводим строки с помощью функции iloc  [1]-обращение к конкретной строке
 
 
 ###################################################################################
@@ -159,26 +159,26 @@
 # Напишите команду, которая создаст серию, состоящую из данных March из df со всех четырех
 # клиник, и сохранит ее в переменной march.
 
-# import pandas as pd
-#
-# df = pd.DataFrame([
-#     ['January', 100, 100, 23, 100],
-#     ['February', 51, 45, 145, 45],
-#     ['March', 81, 96, 65, 96],
-#     ['April', 80, 80, 54, 180],
-#     ['May', 51, 54, 54, 154],
-#     ['June', 112, 109, 79, 129]],
-#     columns=['month', 'clinic_east',
-#              'clinic_north', 'clinic_south',
-#              'clinic_west']
-# )
-#
-# # march = df.iloc[2]
-# # march = df.iloc[2:]  # Можно сделать срезы
-# # march = df.iloc[2:4]  # Можно сделать срезы
-# df3 = df.loc()[1:3, 'clinic_north':'clinic_west']  # Срезаем по конкретным данным
-# # print(march)
-# print(df3)
+import pandas as pd
+
+df = pd.DataFrame([
+    ['January', 100, 100, 23, 100],
+    ['February', 51, 45, 145, 45],
+    ['March', 81, 96, 65, 96],
+    ['April', 80, 80, 54, 180],
+    ['May', 51, 54, 54, 154],
+    ['June', 112, 109, 79, 129]],
+    columns=['month', 'clinic_east',
+             'clinic_north', 'clinic_south',
+             'clinic_west']
+)
+
+# march = df.iloc[2]
+# march = df.iloc[2:]  # Можно сделать срезы
+# march = df.iloc[2:4]  # Можно сделать срезы
+df3 = df.loc()[1:3, 'clinic_north':'clinic_west']  # Срезаем по конкретным данным
+# print(march)
+print(df3)
 
 ###################################################################################
 # Задание
@@ -187,26 +187,26 @@
 # из df для всех четырех сайтов (строки с 3 по 6), и сохраните ее в april_may_june.
 # Выведите результат в консоль
 
-# import pandas as pd
-#
-# df = pd.DataFrame([
-#     ['January', 100, 100, 23, 100],
-#     ['February', 51, 45, 145, 45],
-#     ['March', 81, 96, 65, 96],
-#     ['April', 80, 80, 54, 180],
-#     ['May', 51, 54, 54, 154],
-#     ['June', 112, 109, 79, 129]],
-#     columns=['month', 'clinic_east',
-#              'clinic_north', 'clinic_south',
-#              'clinic_west']
-# )
-#
-# # april_may_june = df.iloc[3:6]
-# # print(april_may_june)
-#
-# # df4 = df[df.month == 'April']  # Выводим строку которая нас интересует, возможно работает на русском!
-# df4 = df[df['month'] == 'April']  # Выводим строку которая нас интересует, аналогично как и выше!!!
-# print(df4)
+import pandas as pd
+
+df = pd.DataFrame([
+    ['January', 100, 100, 23, 100],
+    ['February', 51, 45, 145, 45],
+    ['March', 81, 96, 65, 96],
+    ['April', 80, 80, 54, 180],
+    ['May', 51, 54, 54, 154],
+    ['June', 112, 109, 79, 129]],
+    columns=['month', 'clinic_east',
+             'clinic_north', 'clinic_south',
+             'clinic_west']
+)
+
+# april_may_june = df.iloc[3:6]
+# print(april_may_june)
+
+# df4 = df[df.month == 'April']  # Выводим строку которая нас интересует, возможно работает на русском!
+df4 = df[df['month'] == 'April']  # Выводим строку которая нас интересует, аналогично как и выше!!!
+print(df4)
 
 ###################################################################################
 # Задание
@@ -216,37 +216,37 @@
 # Создайте переменную january, используя логический оператор, который выбирает строку
 # df, в которой столбец «месяц» равен «январь».
 
-# import pandas as pd
-#
-# df = pd.DataFrame([
-#     ['January', 100, 100, 23, 100],
-#     ['February', 51, 45, 145, 45],
-#     ['March', 81, 96, 65, 96],
-#     ['April', 80, 80, 54, 180],
-#     ['May', 51, 54, 54, 154],
-#     ['June', 112, 109, 79, 129]],
-#     columns=['month', 'clinic_east',
-#              'clinic_north', 'clinic_south',
-#              'clinic_west']
-# )
-#
-# # df3 = df[df.month == 'January']  # Выводим строку которая нас интересует, возможно работает на русском!
-# # print(df3)
-#
-#
-# # Задание
-# # 1. Вы хотите увидеть, как изменилось количество посещений клиники с марта по
-# # апрель.
-# # Создайте переменную march_april, которая содержит данные за март и апрель. Сделайте
-# # это, используя два логических оператора, объединенных с помощью |, что означает «или».
-# # Проверить значение переменной march_april.
-#
-# march_april = df[(df.month == 'March') | (df.month == 'April')]
-# print(march_april)
-#
-#
-# # df2 = df[(df.month == 'January') | (df.month == 'May')]  # Отфильтровываем месяц или тот или другой
-# # print(df2)
+import pandas as pd
+
+df = pd.DataFrame([
+    ['January', 100, 100, 23, 100],
+    ['February', 51, 45, 145, 45],
+    ['March', 81, 96, 65, 96],
+    ['April', 80, 80, 54, 180],
+    ['May', 51, 54, 54, 154],
+    ['June', 112, 109, 79, 129]],
+    columns=['month', 'clinic_east',
+             'clinic_north', 'clinic_south',
+             'clinic_west']
+)
+
+df3 = df[df.month == 'January']  # Выводим строку которая нас интересует, возможно работает на русском!
+print(df3)
+
+####################################################################################
+# Задание
+# 1. Вы хотите увидеть, как изменилось количество посещений клиники с марта по
+# апрель.
+# Создайте переменную march_april, которая содержит данные за март и апрель. Сделайте
+# это, используя два логических оператора, объединенных с помощью |, что означает «или».
+# Проверить значение переменной march_april.
+
+march_april = df[(df.month == 'March') | (df.month == 'April')]
+print(march_april)
+
+
+df2 = df[(df.month == 'January') | (df.month == 'May')]  # Отфильтровываем месяц или тот или другой
+print(df2)
 
 
 ###################################################################################
@@ -256,56 +256,56 @@
 # март. Сделайте это с помощью одного логического оператора с командой isin.
 # Проверьте содержание переменной january_february_march.
 
-# import pandas as pd
-#
-# df = pd.DataFrame([
-#     ['January', 100, 100, 23, 100],
-#     ['February', 51, 45, 145, 45],
-#     ['March', 81, 96, 65, 96],
-#     ['April', 80, 80, 54, 180],
-#     ['May', 51, 54, 54, 154],
-#     ['June', 112, 109, 79, 129],
-#     ['January', 85, 99, 53, 158]],
-#     columns=['month', 'clinic_east',
-#              'clinic_north', 'clinic_south',
-#              'clinic_west']
-# )
-#
-# january_february_march = df[df.month.isin(
-#     ['January', 'February', 'March'])]  # Отбираем данные с помощью функции isin(), выбираем значение из списка
-# print(january_february_march)
+import pandas as pd
+
+df = pd.DataFrame([
+    ['January', 100, 100, 23, 100],
+    ['February', 51, 45, 145, 45],
+    ['March', 81, 96, 65, 96],
+    ['April', 80, 80, 54, 180],
+    ['May', 51, 54, 54, 154],
+    ['June', 112, 109, 79, 129],
+    ['January', 85, 99, 53, 158]],
+    columns=['month', 'clinic_east',
+             'clinic_north', 'clinic_south',
+             'clinic_west']
+)
+
+january_february_march = df[df.month.isin(
+    ['January', 'February', 'March'])]  # Отбираем данные с помощью функции isin(), выбираем значение из списка
+print(january_february_march)
 
 ###################################################################################
 #
 
-# import pandas as pd
-#
-# df = pd.DataFrame([
-#     ['January', 100, 100, 23, 100],
-#     ['February', 51, 45, 145, 45],
-#     ['March', 81, 96, 65, 96],
-#     ['April', 80, 80, 54, 180],
-#     ['May', 51, 54, 54, 154],
-#     ['June', 112, 109, 79, 129],
-#     ['January', 85, 99, 53, 158]],
-#     columns=['month', 'clinic_east',
-#              'clinic_north', 'clinic_south',
-#              'clinic_west']
-# )
+import pandas as pd
 
-# january_february_march = df[df.month.isin(
-#     ['January', 'February',
-#      'March'])].reset_index()  # Отбираем данные с помощью функции isin(), выбираем значение из списка
-# january_february_march = january_february_march.reset_index(drop=True)  # Удаляем новые и обновляем старые индексы
-# print(january_february_march)
+df = pd.DataFrame([
+    ['January', 100, 100, 23, 100],
+    ['February', 51, 45, 145, 45],
+    ['March', 81, 96, 65, 96],
+    ['April', 80, 80, 54, 180],
+    ['May', 51, 54, 54, 154],
+    ['June', 112, 109, 79, 129],
+    ['January', 85, 99, 53, 158]],
+    columns=['month', 'clinic_east',
+             'clinic_north', 'clinic_south',
+             'clinic_west']
+)
 
-# df = df.reset_index()  # Отбираем строки по индексу, не меняет исходный DataFrame, отсортировываем список новыми индексами по порядку с помощью reset_index()
-# print(df)
+january_february_march = df[df.month.isin(
+    ['January', 'February',
+     'March'])].reset_index()  # Отбираем данные с помощью функции isin(), выбираем значение из списка
+january_february_march = january_february_march.reset_index(drop=True)  # Удаляем новые и обновляем старые индексы
+print(january_february_march)
+
+df = df.reset_index()  # Отбираем строки по индексу, не меняет исходный DataFrame, отсортировываем список новыми индексами по порядку с помощью reset_index()
+print(df)
 
 
-# df2 = df.loc[[1, 3, 5]]
-# df2.reset_index(drop=True, include=True)
-# print(df2)
+df2 = df.loc[[1, 3, 5]]
+df2.reset_index(drop=True, inplace=True)
+print(df2)
 
 ###################################################################################
 #

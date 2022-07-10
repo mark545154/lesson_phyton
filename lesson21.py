@@ -506,38 +506,38 @@ np.set_printoptions(suppress=True)
 
 # Найти максимум
 max_val = np.max(data_list, axis=0)
-# print('Максимальная общая площадь квартиры: ', max_val[0])
-# print('Максимальная жилая площадь квартиры: ', max_val[1])
-# print('Максимальная площадь кухни: ', max_val[2])
-# print('Максимальная цена квартиры ', max_val[3], ' тыс. руб.')
+print('Максимальная общая площадь квартиры: ', max_val[0])
+print('Максимальная жилая площадь квартиры: ', max_val[1])
+print('Максимальная площадь кухни: ', max_val[2])
+print('Максимальная цена квартиры ', max_val[3], ' тыс. руб.')
 
 # Найти минимум
 min_val = np.min(data_list, axis=0)
 # print(min_val)
-# print('Минимальная общая площадь квартиры: ', min_val[0])
-# print('Минимальная жилая площадь квартиры: ', min_val[1])
-# print('Минимальная площадь кухни: ', min_val[2])
-# print('Минимальная цена квартиры ', min_val[3], ' тыс. руб.')
+print('Минимальная общая площадь квартиры: ', min_val[0])
+print('Минимальная жилая площадь квартиры: ', min_val[1])
+print('Минимальная площадь кухни: ', min_val[2])
+print('Минимальная цена квартиры ', min_val[3], ' тыс. руб.')
 
 # Найти среднее значение
 average_value = np.mean(data_list, axis=0)
 # print(average_value)
-# print('Средняя общая площадь квартиры: ', round(average_value[0], 2))
-# print('Средняя жилая площадь квартиры: ', round(average_value[1], 2))
-# print('Средняя площадь кухни: ', round(average_value[2], 2))
-# print('Средняя цена квартиры ', round(average_value[3], 2), ' тыс. руб.')
+print('Средняя общая площадь квартиры: ', round(average_value[0], 2))
+print('Средняя жилая площадь квартиры: ', round(average_value[1], 2))
+print('Средняя площадь кухни: ', round(average_value[2], 2))
+print('Средняя цена квартиры ', round(average_value[3], 2), ' тыс. руб.')
 
 # Найти моду
 moda_val = [data_list[3] * data_list[0] for index in range(len(data_list))]
-# print(moda_val)
+print(moda_val)
 
 # Найти медиану
 median_val = np.median(data_list, axis=0)
 # print(median_val)
-# print('Медиана общей площади квартиры: ', median_val[0])
-# print('Медиана жилой площади квартиры: ', median_val[1])
-# print('Медиана площади кухни: ', median_val[2])
-# print('Медиана цены квартиры ', median_val[3], ' тыс. руб.')
+print('Медиана общей площади квартиры: ', median_val[0])
+print('Медиана жилой площади квартиры: ', median_val[1])
+print('Медиана площади кухни: ', median_val[2])
+print('Медиана цены квартиры ', median_val[3], ' тыс. руб.')
 
 # Разделить набор данных на три отдельных набора данных по признаку квартир
 # (отдельно однокомнатные, двухкомнатные, четырёхкомнатные)

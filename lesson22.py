@@ -24,16 +24,16 @@
 # и сколько лет они учатся.
 
 
-# import numpy as np
-# from matplotlib import pyplot as plt
+import numpy as np
+from matplotlib import pyplot as plt
 
-# total_enrollment = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5]
-#
-# plt.hist(total_enrollment, bins=5, range=(1, 6))
-# plt.title('Студенты обучающиеся (Код академии Университета)')
-# plt.xlabel('Годы обучения')
-# plt.ylabel('Студенты Уровень (Рост)')
-# # plt.show()
+total_enrollment = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5]
+
+plt.hist(total_enrollment, bins=5, range=(1, 6))
+plt.title('Студенты обучающиеся (Код академии Университета)')
+plt.xlabel('Годы обучения')
+plt.ylabel('Студенты Уровень (Рост)')
+plt.show()
 
 # Гистограмма выше показывает общее количество учащихся университета, которое
 # довольно стабильно. Это равномерное распределение, и это то, что хочет видеть
@@ -41,12 +41,12 @@
 # Теперь давайте посмотрим на набор специально для студентов, желающих получить
 # степень по истории
 
-# history_enrollment = [1, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5]
-# plt.hist(history_enrollment, bins=5, range=(1, 6))
-# plt.title('Студенты обучающиеся (Код академии Университета)')
-# plt.xlabel('Годы обучения')
-# plt.ylabel('Студенты Уровень (Уровень роста)')
-# # plt.show()
+history_enrollment = [1, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5]
+plt.hist(history_enrollment, bins=5, range=(1, 6))
+plt.title('Студенты обучающиеся (Код академии Университета)')
+plt.xlabel('Годы обучения')
+plt.ylabel('Студенты Уровень (Уровень роста)')
+plt.show()
 
 
 # О чем говорит нам эта гистограмма? Что ж, это несколько искаженный левый набор данных,
@@ -56,12 +56,12 @@
 # Школа недавно вложила много денег в новое здание факультета компьютерных наук.
 # Давайте посмотрим на набор и посмотрим, окупаются ли вложения.
 
-# cs_enrollment = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 4, 4]
-# plt.hist(history_enrollment, bins=5, range=(1, 6))
-# plt.title('Студенты обучающиеся (Код академии Университета)')
-# plt.xlabel('Годы обучения')
-# plt.ylabel('Студенты Уровень (Уровень роста)')
-# # plt.show()
+cs_enrollment = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 4, 4]
+plt.hist(history_enrollment, bins=5, range=(1, 6))
+plt.title('Студенты обучающиеся (Код академии Университета)')
+plt.xlabel('Годы обучения')
+plt.ylabel('Студенты Уровень (Уровень роста)')
+plt.show()
 
 
 # Похоже, что за последние годы количество студентов на факультете компьютерных наук
@@ -75,12 +75,12 @@
 # Вместо того, чтобы собирать оценки каждого учащегося, вы берете то, что знаете о данных,
 # и используете генератор случайных чисел для создания модели.
 
-# sat_scores = np.random.normal(1250, 50, size=100000)
-# plt.hist(sat_scores, bins=1000, range=(800, 1600))
-# plt.title('Результаты тестов принятых студентов')
-# plt.xlabel('Результат в баллах')
-# plt.ylabel('Студентов')
-# # plt.show()
+sat_scores = np.random.normal(1250, 50, size=100000)
+plt.hist(sat_scores, bins=1000, range=(800, 1600))
+plt.title('Результаты тестов принятых студентов')
+plt.xlabel('Результат в баллах')
+plt.ylabel('Студентов')
+plt.show()
 
 
 # Одна из главных составляющих вашей школы - это ваша превосходная команда фрисби.
@@ -89,14 +89,14 @@
 # то, что знаете о биномиальных распределениях, чтобы вычислить вероятность такого
 # появления
 
-# ultimate = np.random.binomial(50, 0.70, size=10000)
-# plt.hist(ultimate, bins=50, range=(0, 50), density=True)
-# plt.xlabel('Число игр')
-# plt.ylabel('Частота')
-# plt.show()
-# # Поскольку это немного сложно увидеть на графике, давайте точно посчитаем, какой у них
-# # шанс выиграть 40 игр:
-# print(np.mean(ultimate == 40))  # 0.0356
+ultimate = np.random.binomial(50, 0.70, size=10000)
+plt.hist(ultimate, bins=50, range=(0, 50), density=True)
+plt.xlabel('Число игр')
+plt.ylabel('Частота')
+plt.show()
+# Поскольку это немного сложно увидеть на графике, давайте точно посчитаем, какой у них
+# шанс выиграть 40 игр:
+print(np.mean(ultimate == 40))  # 0.0356
 
 ###################################################################################
 # Гистограммы, часть I
@@ -109,15 +109,15 @@
 # гистограммой.
 # Например, предположим, что у нас есть следующий набор данных
 
-# import numpy as np
-# from matplotlib import pyplot as plt
-#
-# d = [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 5]
-# plt.hist(d, bins=5)
-# plt.title('Гистограмма')
-# plt.xlabel('Номер по x')
-# plt.ylabel('Номер по y')
-# plt.show()
+import numpy as np
+from matplotlib import pyplot as plt
+
+d = [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 5]
+plt.hist(d, bins=5)
+plt.title('Гистограмма')
+plt.xlabel('Номер по x')
+plt.ylabel('Номер по y')
+plt.show()
 
 
 ###################################################################################
@@ -126,15 +126,15 @@
 # 6?
 # Сохраните сумму в значение переменной sum
 
-# import numpy as np
-# from matplotlib import pyplot as plt
+import numpy as np
+from matplotlib import pyplot as plt
 
-# summ = np.array([1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 5])
-# plt.hist(summ, bins=5, range=(1, 6))
-# plt.title('Гистограмма')
-# plt.xlabel('Номер по x')
-# plt.ylabel('Номер по y')
-# plt.show()
+summ = np.array([1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 5])
+plt.hist(summ, bins=5, range=(1, 6))
+plt.title('Гистограмма')
+plt.xlabel('Номер по x')
+plt.ylabel('Номер по y')
+plt.show()
 
 ###################################################################################
 # Задание
@@ -148,14 +148,14 @@
 # до 50.
 # 4. Измените гистограмму еще раз, чтобы на ней было 6 интервалов.
 
-# import numpy as np
-# from matplotlib import pyplot as plt
-#
-# commutes = np.array([20, 30, 50, 40, 24, 26, 27, 27, 30, 50, 20, 34, 15, 18, 17, 35, 37, 38, 43, 45, 47])
-#
-# plt.hist(commutes, range=(20, 51), bins=6)
-#
-# plt.show()
+import numpy as np
+from matplotlib import pyplot as plt
+
+commutes = np.array([20, 30, 50, 40, 24, 26, 27, 27, 30, 50, 20, 34, 15, 18, 17, 35, 37, 38, 43, 45, 47])
+
+plt.hist(commutes, range=(20, 51), bins=6)
+
+plt.show()
 
 
 ###################################################################################
@@ -183,24 +183,24 @@
 # фикционозавру? Сохраните свой ответ (True или False), чтобы ответить.
 # Как гистограммы помогают вам объяснить свой ответ
 
-# import numpy as np
-# from matplotlib import pyplot as plt
-#
-# # Брахиозавр
-# b_data = np.random.normal(6.7, 0.7, size=1000)
-#
-# # Фикозавр
-# f_data = np.random.normal(7.7, 0.3, size=1000)
-#
-# plt.hist(b_data, bins=30, range=(5, 8.5), histtype='step', label='Брахиозавр')
-# plt.hist(f_data, bins=30, range=(5, 8.5), histtype='step', label='Фикозавр')
-# plt.xlabel('Длина бедренной кости (ft)')
-# plt.ylabel('Какое то значение по y')
-# plt.legend(loc=2)
-# plt.show()
-#
-# print(np.mean(b_data >= 6.7))
-# print(np.mean(f_data >= 7.7))
+import numpy as np
+from matplotlib import pyplot as plt
+
+# Брахиозавр
+b_data = np.random.normal(6.7, 0.7, size=1000)
+
+# Фикозавр
+f_data = np.random.normal(7.7, 0.3, size=1000)
+
+plt.hist(b_data, bins=30, range=(5, 8.5), histtype='step', label='Брахиозавр')
+plt.hist(f_data, bins=30, range=(5, 8.5), histtype='step', label='Фикозавр')
+plt.xlabel('Длина бедренной кости (ft)')
+plt.ylabel('Какое то значение по y')
+plt.legend(loc=2)
+plt.show()
+
+print(np.mean(b_data >= 6.7))
+print(np.mean(f_data >= 7.7))
 
 ###################################################################################
 # Задание
@@ -214,13 +214,13 @@
 # one_below?
 # Сохраните свой ответ в переменной one_std и распечатайте его в терминале.
 
-# mean_score = 1000
-# st_dev = 100
-# one_above = mean_score + st_dev
-# one_below = mean_score - st_dev
-#
-# one_std = 2000 * 0.68
-# print(one_std)
+mean_score = 1000
+st_dev = 100
+one_above = mean_score + st_dev
+one_below = mean_score - st_dev
+
+one_std = 2000 * 0.68
+print(one_std)
 
 
 ###################################################################################
@@ -258,17 +258,17 @@
 # Теперь у нас есть рекорд в 10 000 экспериментов. Мы можем использовать Matplotlib для
 # построения результатов всех этих экспериментов:
 
-# import numpy as np
-# from matplotlib import pyplot as plt
-#
-# a = np.random.binomial(10, 0.30, size=10000)
-#
-# plt.hist(a, range=(0, 10), bins=10, density=True)
-# plt.xlabel('Количество "Штрафных бросков"')
-# plt.ylabel('Частота')
-# plt.show()
-#
-# print(np.mean(a == 4))  # вероятность из массива
+import numpy as np
+from matplotlib import pyplot as plt
+
+a = np.random.binomial(10, 0.30, size=10000)
+
+plt.hist(a, range=(0, 10), bins=10, density=True)
+plt.xlabel('Количество "Штрафных бросков"')
+plt.ylabel('Частота')
+plt.show()
+
+print(np.mean(a == 4))  # вероятность из массива
 
 ###################################################################################
 # Задание
@@ -280,17 +280,17 @@
 # 2. Постройте график биномиального распределения с использованием настроек гистограммы
 # по умолчанию и отобразите его с помощью plt.show ().
 
-# import numpy as np
-# from matplotlib import pyplot as plt
-#
-# a = np.random.binomial(500, 0.05, size=10000)
-#
-# plt.hist(a, bins=20, range=(10, 100), density=True)
-# plt.xlabel('Ось x')
-# plt.ylabel('Ось y')
-# plt.show()
-#
-# print(np.mean(a == 10))  # Вероятность открытия письма
+import numpy as np
+from matplotlib import pyplot as plt
+
+a = np.random.binomial(500, 0.05, size=10000)
+
+plt.hist(a, bins=20, range=(10, 100), density=True)
+plt.xlabel('Ось x')
+plt.ylabel('Ось y')
+plt.show()
+
+print(np.mean(a == 10))  # Вероятность открытия письма
 
 
 ###################################################################################
@@ -304,17 +304,17 @@
 # в переменной b_test_emails.
 # 3. Выведите результаты в консоль
 
-# import numpy as np
-# from matplotlib import pyplot as plt
-#
-# a = np.random.binomial(500, 0.05, size=10000)
-#
-# plt.hist(a, bins=20, range=(10, 100), density=True)
-# plt.xlabel('Ось x')
-# plt.ylabel('Ось y')
-# plt.show()
-#
-# print(np.mean(a == 0.08 * 500))  # Вероятность открытия письма
+import numpy as np
+from matplotlib import pyplot as plt
+
+a = np.random.binomial(500, 0.05, size=10000)
+
+plt.hist(a, bins=20, range=(10, 100), density=True)
+plt.xlabel('Ось x')
+plt.ylabel('Ось y')
+plt.show()
+
+print(np.mean(a == 0.08 * 500))  # Вероятность открытия письма
 
 ###################################################################################
 # Задание
@@ -339,27 +339,27 @@
 # менее 20 наших подсолнухов не зацветут.
 # 7. Выведите prob. Возможно ли, что менее 20 наших подсолнухов не зацветут
 
-# import numpy as np
-# from matplotlib import pyplot as plt
-#
-# sunfowers = np.genfromtxt('sunflowers.csv', delimiter=';')
-# print(sunfowers)
-# plt.hist(sunfowers, range=(11, 15), histtype='step', linewidth=2, label='observed', density=True)
-# plt.legend()
-# plt.show()
-#
-# sun_mean = np.mean(sunfowers)
-# st_dev = np.std(sunfowers)
-#
-# sunfowers_normal = np.random.normal(sun_mean, st_dev, size=5000)
-# plt.hist(sunfowers_normal, range=(11, 15), histtype='step', linewidth=2, label='normal', density=True)
-# plt.legend()
-# plt.show()
-#
-# experiments = np.random.binomial(200, 0.1, size=5000)
-#
-# prob = np.mean(experiments < 20)
-# print(prob)  # 0.4634
+import numpy as np
+from matplotlib import pyplot as plt
+
+sunfowers = np.genfromtxt('sunflowers.csv', delimiter=';')
+print(sunfowers)
+plt.hist(sunfowers, range=(11, 15), histtype='step', linewidth=2, label='observed', density=True)
+plt.legend()
+plt.show()
+
+sun_mean = np.mean(sunfowers)
+st_dev = np.std(sunfowers)
+
+sunfowers_normal = np.random.normal(sun_mean, st_dev, size=5000)
+plt.hist(sunfowers_normal, range=(11, 15), histtype='step', linewidth=2, label='normal', density=True)
+plt.legend()
+plt.show()
+
+experiments = np.random.binomial(200, 0.1, size=5000)
+
+prob = np.mean(experiments < 20)
+print(prob)  # 0.4634
 
 
 # ##################################################################################
