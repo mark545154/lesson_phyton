@@ -1,15 +1,15 @@
 ###################################################################################
 # - - - Визуализация данных с использованием библиотек Matplotlib и Seaborn - - - #
 
-# import pandas as pd
-#
-# orders = pd.read_csv('shoefly.csv', delimiter=';')
-# # print(orders.head())
-#
-# df = pd.read_csv('sample11.csv', delimiter=',')
-# df['vvp'] = [35, 40, 38, 28, 44]
-#
-# print(df.head())
+import pandas as pd
+
+orders = pd.read_csv('shoefly.csv', delimiter=';')
+# print(orders.head())
+
+df = pd.read_csv('sample11.csv', delimiter=',')
+df['vvp'] = [35, 40, 38, 28, 44]
+
+print(df.head())
 
 ###################################################################################
 # Задание
@@ -21,22 +21,22 @@
 # Мы также можем добавить новый столбец, который будет одинаковым для всех строк в
 # DataFrame. Вернемся к нашему примеру с инвентарем:
 
-# import pandas as pd
-#
-# df = pd.DataFrame([[1, '3 inch screw', 0.50, 0.75],
-#                    [2, '2 inch nail', 0.10, 0.25],
-#                    [3, 'hammer', 3.00, 5.50],
-#                    [4, 'screwdriver', 2.50, 3.00]],
-#                   columns=['Product ID', 'Product Description', 'Cost to Manufacture', 'Price'])
-#
-# df['Sold in bulk?'] = ['Yes', 'Yes', 'No', 'No']
-# df['In Stock?'] = True
-# df['Облагается налогом?'] = 'Да'
-# df['Налог на продажу'] = df.Price * 0.075  # Это 7,5 %
-# df['Прибыль'] = df.Price - df['Cost to Manufacture']
-#
-# # print(df.columns.values)  # Можно посмотреть список столбцов не заглядывая в файл
-# print(df)
+import pandas as pd
+
+df = pd.DataFrame([[1, '3 inch screw', 0.50, 0.75],
+                   [2, '2 inch nail', 0.10, 0.25],
+                   [3, 'hammer', 3.00, 5.50],
+                   [4, 'screwdriver', 2.50, 3.00]],
+                  columns=['Product ID', 'Product Description', 'Cost to Manufacture', 'Price'])
+
+df['Sold in bulk?'] = ['Yes', 'Yes', 'No', 'No']
+df['In Stock?'] = True
+df['Облагается налогом?'] = 'Да'
+df['Налог на продажу'] = df.Price * 0.075  # Это 7,5 %
+df['Прибыль'] = df.Price - df['Cost to Manufacture']
+
+# print(df.columns.values)  # Можно посмотреть список столбцов не заглядывая в файл
+print(df)
 
 ###################################################################################
 # Выполнение операций с колонками
@@ -51,17 +51,17 @@
 # в определенном столбце. Например, этот код перезаписывает существующие столбцы
 # «Имя», применяя функцию upper к каждой строке в «Имя»
 
-# import pandas as pd
-#
-# df = pd.DataFrame([['JOHN SMITH', 'john.smith@gmail.com'],
-#                    ['Jane Doe', 'jdoe@yahoo.com'],
-#                    ['joe schmo', 'joeschmo@hotmail.com']],
-#                   columns=['Name', 'Email'])
-#
-# df['Name'] = df.Name.apply(str.upper)
-# # df['Name'] = df.Name.str.upper()  # Аналогично, что и выше
-# df['Lowercase Name'] = df.Name.apply(str.lower)
-# print(df)
+import pandas as pd
+
+df = pd.DataFrame([['JOHN SMITH', 'john.smith@gmail.com'],
+                   ['Jane Doe', 'jdoe@yahoo.com'],
+                   ['joe schmo', 'joeschmo@hotmail.com']],
+                  columns=['Name', 'Email'])
+
+df['Name'] = df.Name.apply(str.upper)
+# df['Name'] = df.Name.str.upper()  # Аналогично, что и выше
+df['Lowercase Name'] = df.Name.apply(str.lower)
+print(df)
 
 ###################################################################################
 # Лямбда-функции
@@ -69,15 +69,15 @@
 # его и возвращать какой-то вывод. В Python лямбда-функция — это однострочное
 # сокращение для функции. Простая лямбда-функция может выглядеть так:
 
-# my_lambda = lambda my_input: my_input + 2
-#
-# print(my_lambda(3))
-# print(my_lambda(100))
-# print(my_lambda(-2))
-#
-# is_substring = lambda my_string, big_string: my_string in big_string
-#
-# print(is_substring('string', 'big string'))  # True
+my_lambda = lambda my_input: my_input + 2
+
+print(my_lambda(3))
+print(my_lambda(100))
+print(my_lambda(-2))
+
+is_substring = lambda my_string, big_string: my_string in big_string
+
+print(is_substring('string', 'big string'))  # True
 
 ###################################################################################
 # Мы можем сделать это с помощью оператора if в нашей лямбда-функции с синтаксисом,
@@ -86,19 +86,19 @@
 # ВОЗВРАЩАТЬ, ЕСЛИ ЗАЯВЛЕНИЕ ЛОЖНО>
 # Вот как может выглядеть наша функция check_if_A_grade:
 
-# check_if_A_grade = lambda grade: 'Got an A!' if grade >= 90 else 'Did not get an A...'
-#
-# print(check_if_A_grade(95))
+check_if_A_grade = lambda grade: 'Got an A!' if grade >= 90 else 'Did not get an A...'
+
+print(check_if_A_grade(95))
 
 ###################################################################################
 # Задание
 # 1. Создайте лямбда-функцию с именем contains_a, которая принимает входное слово
 # и возвращает True, если вход содержит букву 'a'. В противном случае верните False.
 
-# contains_a = lambda my_string: 'a' in my_string
-#
-# print(contains_a('hello'))  # False
-# print(contains_a('name'))  # True
+contains_a = lambda my_string: 'a' in my_string
+
+print(contains_a('hello'))  # False
+print(contains_a('name'))  # True
 
 ###################################################################################
 # Задание
@@ -106,9 +106,9 @@
 # строку и возвращает True, если строка содержит более 12 символов. В противном
 # случае верните False.
 
-# long_string = lambda my_string: len(my_string) > 12
-#
-# print(long_string('hello'))
+long_string = lambda my_string: len(my_string) > 12
+
+print(long_string('hello'))
 
 ###################################################################################
 # Задание
@@ -116,22 +116,22 @@
 # возвращает True, если последний символ в строке - a. В противном случае верните
 # False
 
-# end_in_a = lambda my_string: my_string[-1] == 'a'  # my_string[-1]=='a' in my_string эквивалентно my_string[-1]=='a' and 'a' in my_string
-#
-# print(end_in_a('hola'))
+end_in_a = lambda my_string: my_string[-1] == 'a'  # my_string[-1]=='a' in my_string эквивалентно my_string[-1]=='a' and 'a' in my_string
+
+print(end_in_a('hola'))
 
 ###################################################################################
 # Напоминаем, что для возврата разных выходных данных в зависимости от разных входных
 # данных мы можем использовать if и else внутри нашей лямбда-функции:
 
-# add_or_subtract = lambda input_number: input_number - 1 if input_number >= 0 else input_number + 1
+add_or_subtract = lambda input_number: input_number - 1 if input_number >= 0 else input_number + 1
 
-# print(add_or_subtract(-3))
+print(add_or_subtract(-3))
 
 
-# add_or_subtract = lambda input_number: input_number ** 2 if input_number > 1 else input_number ** 3
-#
-# print(add_or_subtract(-3))
+add_or_subtract = lambda input_number: input_number ** 2 if input_number > 1 else input_number ** 3
+
+print(add_or_subtract(-3))
 
 
 ###################################################################################
@@ -140,9 +140,9 @@
 # именем num. Если число четное, верните «четное». Если число нечетное, верните
 # «нечетное».
 
-# even_or_odd = lambda num: 'четное' if num % 2 == 0 else 'нечетное'
-#
-# print(even_or_odd(77))
+even_or_odd = lambda num: 'четное' if num % 2 == 0 else 'нечетное'
+
+print(even_or_odd(77))
 
 ###################################################################################
 # Задание
@@ -150,9 +150,9 @@
 # число с именем num. Если число кратно трем, верните «кратное трем». В
 # противном случае верните «не кратное».
 
-# multiple_of_three = lambda num: 'кратное трем' if num % 3 == 0 else 'не кратное'
-#
-# print(multiple_of_three(8))
+multiple_of_three = lambda num: 'кратное трем' if num % 3 == 0 else 'не кратное'
+
+print(multiple_of_three(8))
 
 ###################################################################################
 # Задание
@@ -160,9 +160,9 @@
 # Если рейтинг больше 8,5, верните «Мне понравился этот фильм». В противном случае
 # верните «Этот фильм был не очень хорошим»
 
-# rate_movie = lambda rating: 'Мне понравился этот фильм' if rating > 8.5 else 'Этот фильм был не очень хорошим'
-#
-# print(rate_movie(8.6))
+rate_movie = lambda rating: 'Мне понравился этот фильм' if rating > 8.5 else 'Этот фильм был не очень хорошим'
+
+print(rate_movie(8.6))
 
 ###################################################################################
 # Обзор лямбда-функции
@@ -172,16 +172,16 @@
 # Вот пример, который принимает строку, присваивает ее временной переменной x, а затем
 # преобразует ее в нижний регистр:
 
-# stringlambda = lambda x: x.lower()
-# print(stringlambda("Oh Hi Mark!"))
+stringlambda = lambda x: x.lower()
+print(stringlambda("Oh Hi Mark!"))
 
 ###################################################################################
 # Задание
 # 1. Создайте лямбда-функцию mylambda, которая возвращает первую и последнюю
 # буквы строки, при условии, что длина строки составляет не менее 2 символов
 
-# mylambda = lambda my_string: my_string[0] + my_string[-1] if len(my_string) > 2 else 'Слово из двух букв'
-# print(mylambda('hello'))
+mylambda = lambda my_string: my_string[0] + my_string[-1] if len(my_string) > 2 else 'Слово из двух букв'
+print(mylambda('hello'))
 
 ###################################################################################
 # Обзор лямбда-функции: операторы If
@@ -191,16 +191,17 @@
 # работу, превышающую 40 часов в неделю). Следующая функция преобразует
 # количество часов в полтора часа с помощью оператора if
 
-# def myfunction(x):
-#     if x > 40:
-#         return 40 + (x - 40) * 1.50
-#
-#     else:
-#         return x
-#
-#
-# # Ниже приведена лямбда-функция, которая делает то же самое:
-# myfunction = lambda x: 40 + (x - 40) * 1.50 if x > 40 else x
+def myfunction(x):
+    if x > 40:
+        return 40 + (x - 40) * 1.50
+
+    else:
+        return x
+
+
+# Ниже приведена лямбда-функция, которая делает то же самое:
+myfunction = lambda x: 40 + (x - 40) * 1.50 if x > 40 else x
+print(myfunction(45))
 
 # В общем, синтаксис функции if в лямбда-функции:
 # lambda x: [OUTCOME IF TRUE] if [CONDITIONAL] else [OUTCOME IF FALSE]
@@ -213,9 +214,9 @@
 # Добро пожаловать в BattleCity! если пользователю 13 лет или старше, или вам должно быть
 # больше 13 лет, если он моложе 13. Ваша лямбда-функция должна называться mylambda
 
-# mylambda = lambda age: 'Добро пожаловать в BattleCity!' if age >= 13 else 'вам должно быть больше 13 лет'
-#
-# print(mylambda(13))
+mylambda = lambda age: 'Добро пожаловать в BattleCity!' if age >= 13 else 'вам должно быть больше 13 лет'
+
+print(mylambda(13))
 
 ###################################################################################
 # Применение лямбда-функции к столбцу
@@ -228,19 +229,19 @@
 # именем и фамилией (например, Джон Смит) и возвращает только фамилию
 # (например, Смит)
 
-# import pandas as pd
-#
-# df = pd.DataFrame([['JOHN SMITH', 'john.smith@gmail.com'],
-#                    ['Jane Doe', 'jdoe@yahoo.com'],
-#                    ['joe schmo', 'joeschmo@hotmail.com']],
-#                   columns=['Name', 'Email'])
-#
-# df['Name'] = df.Name.apply(str.upper)
-# df['Lowercase Name'] = df.Name.apply(str.lower)
-# df['Email Provider'] = df.Email.apply(lambda x: x.split('@')[-1])
-# df['Last Name'] = df.Name.apply(lambda get_last_name: get_last_name.split(' ')[-1])
-#
-# print(df)
+import pandas as pd
+
+df = pd.DataFrame([['JOHN SMITH', 'john.smith@gmail.com'],
+                   ['Jane Doe', 'jdoe@yahoo.com'],
+                   ['joe schmo', 'joeschmo@hotmail.com']],
+                  columns=['Name', 'Email'])
+
+df['Name'] = df.Name.apply(str.upper)
+df['Lowercase Name'] = df.Name.apply(str.lower)
+df['Email Provider'] = df.Email.apply(lambda x: x.split('@')[-1])
+df['Last Name'] = df.Name.apply(lambda get_last_name: get_last_name.split(' ')[-1])
+
+print(df)
 
 ###################################################################################
 # Применение лямбды к строке
@@ -255,17 +256,17 @@
 # с продаж).
 # Если облагается налогом? Нет, у нас просто будет Цена, не умножая ее
 
-# import pandas as pd
-#
-# df = pd.DataFrame([['Apple', 1.00, 'No'],
-#                    ['Milk', 4.20, 'No'],
-#                    ['Paper Towels', 5.00, 'Yes'],
-#                    ['Light Bulbs', 3.75, 'Yes']],
-#                   columns=['Item', 'Price', 'Is taxed?'])
-#
-# df['Облагается налогом?'] = df.apply(lambda row: row['Price'] * 1.075 if row['Is taxed?'] == 'Yes' else row['Price'], axis=1)
-#
-# print(df)
+import pandas as pd
+
+df = pd.DataFrame([['Apple', 1.00, 'No'],
+                   ['Milk', 4.20, 'No'],
+                   ['Paper Towels', 5.00, 'Yes'],
+                   ['Light Bulbs', 3.75, 'Yes']],
+                  columns=['Item', 'Price', 'Is taxed?'])
+
+df['Облагается налогом?'] = df.apply(lambda row: row['Price'] * 1.075 if row['Is taxed?'] == 'Yes' else row['Price'], axis=1)
+
+print(df)
 
 ###################################################################################
 # Задание
@@ -292,52 +293,45 @@ df.to_csv('new_employees_lambda.csv')
 print(df)
 
 ###################################################################################
-#
+# Задание 1
+# 1. Составить таблицу, содержащую информацию о зарплате сотрудников. Столбцы таблицы: Номер,
+# Фамилия, Имя, Отчество, Должность, Оклад.
+# Столбец Номер заполнить номерами по порядку. Таблица должна содержать не менее 10 строк.
+# Значения столбцов Фамилия, Имя, Отчество, Должность и Оклад заполнить произвольно Должности:
+# директор, 3 менеджера, 3 мастера и/или любые другие. Оклады от 40000 до 90000.
+# 2. Теперь необходимо добавить столбцы «Аванс», «Пенсионный фонд», «Налог», «К выдаче». Сначала
+# значения процентов аванса (40%), отчислений в пенсионный фонд (1%), налога (13%), а также минимального
+# размера оплаты труда (МРОТ – 12 792 рублей)
+# Столбцы Аванс, Пенсионный фонд, Налог, К выдаче рассчитываются по формулам:
+# − аванс составляет 40% от оклада;
+# − отчисления в пенсионный фонд – 1% от оклада;
+# − Налог = (Оклад – Пенсионный фонд – МРОТ) × 13%;
+# o МРОТ – минимальный размер оплаты труда;
+# − К выдаче = Оклад – Аванс –Пенсионный фонд – Налог.
 
-###################################################################################
-#
+import pandas as pd
 
-###################################################################################
-#
+df = pd.DataFrame([[1, 'Иванов', 'Иван', 'Иванович', 'мастер', 40000],
+                   [2, 'Берёзов', 'Дмитрий', 'Константинович', 'мастер', 40000],
+                   [3, 'Иванова', 'Мария', 'Александровна', 'гл.Бухгалтер', 70000],
+                   [4, 'Великолепный', 'Дмитрий', 'Иванович', 'директор', 100000],
+                   [5, 'Малышева', 'Ирина', 'Владимировна', 'секретарь', 65000],
+                   [6, 'Квашнина', 'Людмила', 'Фёдоровна', 'бухгалтер', 68000],
+                   [7, 'Мерзилов', 'Олег', 'Николаевич', 'менеджер', 58000],
+                   [8, 'Аксёнов', 'Роман', 'Алексеевич', 'мастер', 40000],
+                   [9, 'Якушева', 'Ольга', 'Романовна', 'менеджер', 58000],
+                   [10, 'Петрова', 'Любовь', 'Юрьевна', 'менеджер', 58000]],
+                  columns=['Номер', 'Фамилия', 'Имя', 'Отчество', 'Должность', 'Оклад'])
 
-###################################################################################
-#
+df['Фамилия'] = df.Фамилия.apply(str.title)  # с заглавной буквы
+df['Имя'] = df.Имя.apply(str.title)  # # с заглавной буквы
+df['Отчество'] = df.Отчество.apply(str.title)  # с заглавной буквы
+df['Должность'] = df.Должность.apply(str.lower)  # в нижний регистр
 
-###################################################################################
-#
+df['Аванс'] = df.Оклад * 0.4  # аванс составляет 40% от оклада
+df['Пенсионный фонд'] = df.Оклад * 0.01  # отчисления в пенсионный фонд – 1% от оклада
+df['МРОТ'] = 12792  # МРОТ – минимальный размер оплаты труда
+df['Налог'] = (df.Оклад - df['Пенсионный фонд'] - df.МРОТ) * 0.13  # Налог = (Оклад – Пенсионный фонд – МРОТ) × 13%
+df['К выдаче'] = df.Оклад - df.Аванс - df['Пенсионный фонд'] - df.Налог  # К выдаче = Оклад – Аванс –Пенсионный фонд – Налог
 
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
-
-###################################################################################
-#
+print(df)
