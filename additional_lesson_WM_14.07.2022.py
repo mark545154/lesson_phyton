@@ -8,7 +8,7 @@ names_and_heights = list(zip(names, heights))
 
 print(names_and_heights)
 
-names+=['Екатерина']
+names += ['Екатерина']
 names.append('Екатерина')
 print(names)
 
