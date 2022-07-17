@@ -4,35 +4,35 @@
 
 # Работа с дубликатами
 
-# import pandas as pd
-# df = pd.read_csv('duplicates.csv', delimiter=';')
-# # print(df.head())
-# # print(df.info())
-# print(len(df))  # len в pandas показывает кол-во строк
-# # print(df.duplicated())
-# df.drop_duplicates(inplace=True)  # Удаляем дубликаты!!!
-# # print(df.duplicated())
-#
-#
-# df.drop_duplicates(inplace=True, subset=['card_num'])  # Удаляем дубликаты по конкретному полю, где дубликатов не должно быть
-# # print(df['card_num'].duplicated())
-# df.reset_index(inplace=True)
-# print(len(df))  # len в pandas показывает кол-во строк
+import pandas as pd
+df = pd.read_csv('duplicates.csv', delimiter=';')
+# print(df.head())
+# print(df.info())
+print(len(df))  # len в pandas показывает кол-во строк
+# print(df.duplicated())
+df.drop_duplicates(inplace=True)  # Удаляем дубликаты!!!
+# print(df.duplicated())
+
+
+df.drop_duplicates(inplace=True, subset=['card_num'])  # Удаляем дубликаты по конкретному полю, где дубликатов не должно быть
+# print(df['card_num'].duplicated())
+df.reset_index(inplace=True)
+print(len(df))  # len в pandas показывает кол-во строк
 
 ###################################################################################
 #
 
-# import pandas as pd
-#
-# df = pd.read_csv('students.csv', delimiter=';')
-# print(df.head())
-# print(df.info())
+import pandas as pd
 
-# print(df.duplicated().sum())  # Смотрим какое кол-во дубликатов
+df = pd.read_csv('students.csv', delimiter=';')
+print(df.head())
+print(df.info())
 
-# df.drop_duplicates(inplace=True)  # Всегда используем inplace=True для просмотра дубликатов
-# print(df.duplicated().sum())  # Смотрим какое кол-во дубликатов
-# print(len(df))  # len в pandas показывает кол-во строк
+print(df.duplicated().sum())  # Смотрим какое кол-во дубликатов
+
+df.drop_duplicates(inplace=True)  # Всегда используем inplace=True для просмотра дубликатов
+print(df.duplicated().sum())  # Смотрим какое кол-во дубликатов
+print(len(df))  # len в pandas показывает кол-во строк
 
 
 # Задание
@@ -50,30 +50,30 @@
 # кроме gender _ возраста.
 
 # - - - - Разделение по индексу - - - - -#
-# df['age'] = df.gender_age.str[1:]  # Добавляем новый столбец с возрастом
-# df['gender'] = df.gender_age.str[0]  # Добавляем новый столбец с полом
-# df.drop(['gender_age'], inplace=True, axis=1)  # Удаляем столбец gender_age
-# print(df)
+df['age'] = df.gender_age.str[1:]  # Добавляем новый столбец с возрастом
+df['gender'] = df.gender_age.str[0]  # Добавляем новый столбец с полом
+df.drop(['gender_age'], inplace=True, axis=1)  # Удаляем столбец gender_age
+print(df)
 
 # - - - - Разделение по символам - - - - - #
-# df['str_split'] = df.full_name.str.split(' ')
-# df['first_name'] = df.str_split.str.get(0)
-# df['last_name'] = df.str_split.str.get(1)
-# df.drop(['str_split', 'full_name'], inplace=True, axis=1)
-# print(df)
+df['str_split'] = df.full_name.str.split(' ')
+df['first_name'] = df.str_split.str.get(0)
+df['last_name'] = df.str_split.str.get(1)
+df.drop(['str_split', 'full_name'], inplace=True, axis=1)
+print(df)
 
 
 # Задание
 # 1. Давайте проверим типы в таблице студентов.
-# Выведите атрибут .dtypes.
+# Выведите атрибут.dtypes.
 # 2. Если бы мы хотели построить диаграмму рассеяния возраста и среднего балла на
 # экзамене, сможем ли мы сделать это с этим типом данных?
 # Попробуйте распечатать среднее значение в столбце оценок учащихся.
 
-# print(df)
-# df['age'] = pd.to_numeric(df['age'])  # Переводим столбец age в числовое значение (цифры)
-# df['age'] = df['age'].apply('int64')  # Переводим столбец age в числовое значение (цифры)
-# print(df.dtypes)
+print(df)
+df['age'] = pd.to_numeric(df['age'])  # Переводим столбец age в числовое значение (цифры)
+df['age'] = df['age'].apply('int64')  # Переводим столбец age в числовое значение (цифры)
+print(df.dtypes)
 
 
 # Задание
@@ -82,9 +82,9 @@
 # Используйте регулярное выражение, чтобы убрать знаки% в столбце оценки.
 # 2. Преобразуйте столбец оценки в числовой тип с помощью функции pd.to_numeric ()
 
-# df['score'] = df['score'].replace('[\%]', '', regex=True)
-# df['score'] = pd.to_numeric(df['score'])  # Переводим столбец score в числовое значение (цифры)
-# print(df.dtypes)
+df['score'] = df['score'].replace('[\%]', '', regex=True)
+df['score'] = pd.to_numeric(df['score'])  # Переводим столбец score в числовое значение (цифры)
+print(df.dtypes)
 
 
 
@@ -102,10 +102,10 @@
 # распечатайте!
 # Мы не смогли бы этого сделать с такими строками, как 9th grade”, “10th grade”
 
-# split_df = df['grade'].str.split('(\d+)', expand=True)
-# print(split_df)
-# df['grade'] = pd.to_numeric(split_df[1])
-# print(df)
+split_df = df['grade'].str.split('(\d+)', expand=True)
+print(split_df)
+df['grade'] = pd.to_numeric(split_df[1])
+print(df)
 
 
 # Пропущенные значения
@@ -115,12 +115,12 @@
 # Метод 1: удалить все строки с отсутствующим значением
 # Для этого мы можем использовать .dropna ():
 
-# print(df.isnull().sum())  # Смотрим кол-во пропусков в файле
-# df['score'] = df.score.fillna(0)
-# print(df.isnull().sum())
-# print(df)
-# df.to_csv('studens_clear.csv')
-# df.to_excel('studens_clear.xlsx')
+print(df.isnull().sum())  # Смотрим кол-во пропусков в файле
+df['score'] = df.score.fillna(0)
+print(df.isnull().sum())
+print(df)
+df.to_csv('studens_clear.csv')
+df.to_excel('studens_clear.xlsx')
 
 
 # Метод 2: заполните отсутствующие значения средним значением столбца или другим
