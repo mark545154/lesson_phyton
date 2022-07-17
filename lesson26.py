@@ -1,24 +1,39 @@
 ###################################################################################
 # - - - - - Манипуляции над данными с использованием библиотеки Pandas - - - - - #
+# Вот некоторые из самых полезных:
+# • .head () - отобразить первые 5 строк таблицы
+# • .info () - отобразить сводку таблицы
+# • .describe () - отображать сводную статистику таблицы
+# •.columns - отображать имена столбцов таблицы
+# • .value_counts () - отображать отдельные значения для столбца
+# Задание
+# 1. Мы предоставили два DataFrames, df1 и df2.
+# Проверьте оба этих DataFrames, используя перечисленные выше функции.
+# Начните с печати .head () как df1, так и df2.
+# В pandas можно работать с файлами excel
+# pd.ExcelFile('ШР.xlsx').parse('Sheet1')
+# 2. Изучите DataFrames с помощью других перечисленных функций.
+# Какой DataFrame является «чистым» и готовым к анализу? Создайте переменную с
+# именем clean и установите для нее значение 1 для df1 и 2 для df2.
 
 import pandas as pd
 
 df1 = pd.read_csv('df1.csv', sep='\t')
 df2 = pd.read_csv('df2.csv', sep='\t')
 
-print(df1.info())
+print(df1.info())  # .info () - отобразить сводку таблицы
 print(df2.info())
 
-print(df1.head())
+print(df1.head())  # .head () - отобразить первые 5 строк таблицы
 print(df2.head())
 
-print(df1.columns)
+print(df1.columns)  # .columns - отображать имена столбцов таблицы
 print(df2.columns)
 
-print(df1.describe())  # describe Выводит среднее значение
+print(df1.describe())  # .describe () - отображать сводную статистику таблицы
 print(df2.describe())  # describe Выводит среднее значение
 
-print(df1['Grocery Item'].value_counts())  # value_counts добавляет доп. столбец и считает уникальные значения, нужно указывать колонку
+print(df1['Grocery Item'].value_counts())  # .value_counts () - отображать отдельные значения для столбца
 print(df2['Recipe'].value_counts())  # value_counts добавляет доп. столбец и считает уникальные значения, нужно указывать колонку
 
 print(df1['Grocery Item'].unique())  # unique выводит уникальные значения
@@ -65,7 +80,7 @@ for filename in student_files:
 students = pd.concat(df_list)  # concat склеивает всех dataFrame склеивает в один список, должно быть одинаковое кол-во столбцов
 # students.to_csv('stud2.csv')  # Можем записать в новый файл
 print(students)
-print(len(students))
+print(len(students))  # Выводит размер данных
 
 ###################################################################################
 # Работа с дубликатами
@@ -79,12 +94,16 @@ df = pd.read_csv('stud_cl.csv', sep='\t')
 # pd.set_option('display.max_rows', None)
 df.drop(['Unnamed: 0'], inplace=True, axis=1)
 
-# df2 = df.duplicated()
+# df2 = df.duplicated()  # .duplicated(), которая вернет ряд, указывающий нам, какие строки являются повторяющимися строками
 # print(df2.sort_values())  # Показывает True по дубликатам
 
 
 # print(df.duplicated())
 print(df.duplicated().sum())  # Показывает кол-во дубликатов в файле
-df.drop_duplicates(inplace=True)  # Удаляет дублирующие строки
+df.drop_duplicates(inplace=True)  # pandas.drop_duplicates(), чтобы удалить все строки, которые являются дубликатами другой строки
 df.reset_index(inplace=True, drop=True)  # После удаления делаем reset по index, т.е. обновляем индексы т.к. удалили дубликаты
-print(df.duplicated().sum())
+print(df.duplicated().sum())  # Показывает кол-во дубликатов в файле
+
+# Если бы мы хотели удалить каждую строку с повторяющимся значением в столбце "
+# item ", мы могли бы указать подмножество:
+# fruits = fruits.drop_duplicates(subset=['item'])
