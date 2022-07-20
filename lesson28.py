@@ -1,27 +1,27 @@
 ###################################################################################
 # - - - Визуализация данных с использованием библиотек Matplotlib и Seaborn - - - #
 
-# import numpy as np
-# import pandas as pd
-#
-# df = pd.read_csv('ShoeFlywithPrice.csv', delimiter='\t')
-# most_exurance = df.price.max()
-# # print(df.head())
-# # print(df[df['price'] == most_exurance])
-# num_colors = len(df.shoe_color.unique())
-# cheap_shoes = df.groupby('shoe_color').price.apply(
-#     lambda x: np.percentile(x, 25)).reset_index()  # Груперуем по цветам при помощи groupby по столбцу shoe_color
-# # print(cheap_shoes)
-#
-#
-# # Расчет агрегатных функций IV
-# # Иногда нам нужно сгруппировать по более чем одному столбцу. Мы можем легко сделать
-# # это, передав список имен столбцов в метод groupby.
-# # Представьте, что у нас есть сеть магазинов и есть данные о количестве продаж в разных
-# # местах в разные дни:
-#
-# shoe_sells = df.groupby(['shoe_type', 'shoe_color']).id.count()
-# print(shoe_sells)
+import numpy as np
+import pandas as pd
+
+df = pd.read_csv('ShoeFlywithPrice.csv', delimiter='\t')
+most_exurance = df.price.max()
+# print(df.head())
+# print(df[df['price'] == most_exurance])
+num_colors = len(df.shoe_color.unique())
+cheap_shoes = df.groupby('shoe_color').price.apply(
+    lambda x: np.percentile(x, 25)).reset_index()  # Груперуем по цветам при помощи groupby по столбцу shoe_color
+# print(cheap_shoes)
+
+
+# Расчет агрегатных функций IV
+# Иногда нам нужно сгруппировать по более чем одному столбцу. Мы можем легко сделать
+# это, передав список имен столбцов в метод groupby.
+# Представьте, что у нас есть сеть магазинов и есть данные о количестве продаж в разных
+# местах в разные дни:
+
+shoe_sells = df.groupby(['shoe_type', 'shoe_color']).id.count()
+print(shoe_sells)
 
 ###################################################################################
 # Базовый линейный график
@@ -34,12 +34,12 @@
 # Используя методы Matplotlib, следующий код создаст простой линейный график с
 # помощью .plot () и отобразит его с помощью .show ():
 
-# from matplotlib import pyplot as plt
-#
-# x_values = [0, 1, 2, 3, 4]
-# y_values = [0, 1, 4, 9, 16]
-# plt.plot(x_values, y_values)
-# plt.show()
+from matplotlib import pyplot as plt
+
+x_values = [0, 1, 2, 3, 4]
+y_values = [0, 1, 4, 9, 16]
+plt.plot(x_values, y_values)
+plt.show()
 
 ###################################################################################
 # Задание
@@ -51,23 +51,23 @@
 
 from matplotlib import pyplot as plt
 
-# days = range(7)
-# money_spent = [10, 12, 12, 10, 14, 22, 24]
-#
-# # Мы могли бы добавить расходы на обед друга для сравнения следующим образом:
-# money_spent_2 = [11, 14, 15, 15, 22, 21, 12]
+days = range(7)
+money_spent = [10, 12, 12, 10, 14, 22, 24]
 
-# plt.plot(days, money_spent)
-# plt.plot(days, money_spent_2)
-# plt.show()
+# Мы могли бы добавить расходы на обед друга для сравнения следующим образом:
+money_spent_2 = [11, 14, 15, 15, 22, 21, 12]
+
+plt.plot(days, money_spent)
+plt.plot(days, money_spent_2)
+plt.show()
 
 # Linestyles
 # Мы можем указать другой цвет для строки, используя ключевое слово color с именем
 # цвета HTML или HEX-кодом:
 
-# plt.plot(days, money_spent, color='green')
-# plt.plot(days, money_spent_2, color='#1204ff')
-# plt.show()
+plt.plot(days, money_spent, color='green')
+plt.plot(days, money_spent_2, color='#1204ff')
+plt.show()
 
 # Мы также можем сделать линию пунктирной или пунктирной, используя ключевое слово
 # linestyle.
@@ -85,13 +85,13 @@ from matplotlib import pyplot as plt
 # # A star:
 # plt.plot(x_values, y_values, marker='*')
 
-# plt.xlabel('Дни недели')
-# plt.ylabel('Затраты на обед')
-# plt.title('Динамика затрат на обеды')
-#
-# plt.plot(days, money_spent, color='green', linestyle='--', marker='o')
-# plt.plot(days, money_spent_2, color='#1204ff', linestyle='-.', marker='s')
-# plt.show()
+plt.xlabel('Дни недели')
+plt.ylabel('Затраты на обед')
+plt.title('Динамика затрат на обеды')
+
+plt.plot(days, money_spent, color='green', linestyle='--', marker='o')
+plt.plot(days, money_spent_2, color='#1204ff', linestyle='-.', marker='s')
+plt.show()
 
 ###################################################################################
 # Задание
@@ -100,9 +100,9 @@ from matplotlib import pyplot as plt
 # 2. Постройте график зависимости затрат от времени в виде линии с шестигранным
 # цветом # 82edc9 и квадратными маркерами ('s').
 
-# plt.plot(days, money_spent, color='purple', linestyle='--', marker='o')
-# plt.plot(days, money_spent_2, color='#82edc9', linestyle='-.', marker='s')
-# plt.show()
+plt.plot(days, money_spent, color='purple', linestyle='--', marker='o')
+plt.plot(days, money_spent_2, color='#82edc9', linestyle='-.', marker='s')
+plt.show()
 
 
 ###################################################################################
@@ -112,13 +112,13 @@ from matplotlib import pyplot as plt
 # использовать plt.axis (). Мы используем plt.axis (), передавая ему список в качестве
 # входных данных. Этот список должен содержать:
 
-# from matplotlib import pyplot as plt
-#
-# x = [0, 1, 2, 3, 4]
-# y = [0, 1, 4, 9, 16]
-# plt.plot(x, y)
-# plt.axis([0, 3, 2, 5])
-# plt.show()
+from matplotlib import pyplot as plt
+
+x = [0, 1, 2, 3, 4]
+y = [0, 1, 4, 9, 16]
+plt.plot(x, y)
+plt.axis([0, 3, 2, 5])
+plt.show()
 
 
 ###################################################################################
@@ -129,13 +129,13 @@ from matplotlib import pyplot as plt
 # Используйте plt.axis (), чтобы изменить оси так, чтобы ось x двигалась от 0 до 12, а
 # ось y - от 2900 до 3100
 
-# from matplotlib import pyplot as plt
-#
-# x = range(12)
-# y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
-# plt.plot(x, y)
-# plt.axis([4, 8, 2980, 3100])
-# plt.show()
+from matplotlib import pyplot as plt
+
+x = range(12)
+y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
+plt.plot(x, y)
+plt.axis([4, 8, 2980, 3100])
+plt.show()
 
 ###################################################################################
 # Маркировка осей
@@ -149,34 +149,34 @@ from matplotlib import pyplot as plt
 # Для всех этих команд требуется строка, которая представляет собой набор символов в
 # одинарных (') или двойных (") кавычках
 
-# from matplotlib import pyplot as plt
-#
-# x = range(12)
-# y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
-# plt.plot(x, y)
-# plt.axis([4, 8, 2980, 3100])
-# plt.xlabel('Месяцы')
-# plt.ylabel('Затраты на кофе')
-# plt.title('Динамика затрат на кофе за год')
-# plt.show()
+from matplotlib import pyplot as plt
+
+x = range(12)
+y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
+plt.plot(x, y)
+plt.axis([4, 8, 2980, 3100])
+plt.xlabel('Месяцы')
+plt.ylabel('Затраты на кофе')
+plt.title('Динамика затрат на кофе за год')
+plt.show()
 
 ###################################################################################
 #
 
-# from matplotlib import pyplot as plt
-#
-# x_values = [0, 1, 2, 3, 4]
-# y_values = [0, 1, 4, 9, 16]
-#
-# x = [1, 2, 3, 4]
-# y = [1, 2, 3, 4]
-# plt.subplot(1, 2, 1)
-# plt.plot(x_values, y_values)
-# plt.title('График 1')
-# plt.subplot(1, 2, 2)
-# plt.plot(x, y)
-# plt.title('График 2')
-# plt.show()
+from matplotlib import pyplot as plt
+
+x_values = [0, 1, 2, 3, 4]
+y_values = [0, 1, 4, 9, 16]
+
+x = [1, 2, 3, 4]
+y = [1, 2, 3, 4]
+plt.subplot(1, 2, 1)
+plt.plot(x_values, y_values)
+plt.title('График 1')
+plt.subplot(1, 2, 2)
+plt.plot(x, y)
+plt.title('График 2')
+plt.show()
 
 
 ###################################################################################
@@ -188,21 +188,21 @@ from matplotlib import pyplot as plt
 # plt.plot, чтобы преобразовать график в диаграмму рассеяния, если хотите!
 # 3. Покажите графики
 
-# from matplotlib import pyplot as plt
-#
-# months = range(12)
-# temperature = [36, 36, 39, 52, 61, 72, 77, 75, 68, 57, 48, 48]
-# flights_to_hawaii = [1200, 1300, 1100, 1450, 850, 750, 400, 450, 400, 860, 990, 1000]
-# plt.subplot(1, 2, 1)
-# plt.plot(months, temperature)
-# plt.title('График температуры')
-# plt.subplot(1, 2, 2)
-# plt.plot(months, flights_to_hawaii, linestyle='', marker='o')
-# plt.title('График полета Гавайи')
-# plt.ylabel('Кол-во полётов')
-# plt.subplots_adjust(bottom=0.2)
-# plt.subplots_adjust(wspace=0.5)
-# plt.show()
+from matplotlib import pyplot as plt
+
+months = range(12)
+temperature = [36, 36, 39, 52, 61, 72, 77, 75, 68, 57, 48, 48]
+flights_to_hawaii = [1200, 1300, 1100, 1450, 850, 750, 400, 450, 400, 860, 990, 1000]
+plt.subplot(1, 2, 1)
+plt.plot(months, temperature)
+plt.title('График температуры')
+plt.subplot(1, 2, 2)
+plt.plot(months, flights_to_hawaii, linestyle='', marker='o')
+plt.title('График полета Гавайи')
+plt.ylabel('Кол-во полётов')
+plt.subplots_adjust(bottom=0.2)
+plt.subplots_adjust(wspace=0.5)
+plt.show()
 
 ###################################################################################
 # Задание
@@ -222,33 +222,33 @@ from matplotlib import pyplot as plt
 # 5. Увеличьте интервал между горизонтальными частями графика до 0,35 и нижнее
 # поле до 0,2
 
-# from matplotlib import pyplot as plt
-#
-# x = range(7)
-# straight_line = [0, 1, 2, 3, 4, 5, 6]
-# parabola = [0, 1, 4, 9, 16, 25, 36]
-# cubic = [0, 1, 8, 27, 64, 125, 216]
-#
-# plt.subplot(3, 1, 1)  # первая цифра - строки, вторая - столбцы, третья - индексы
-# plt.plot(x, straight_line)
-# plt.legend(['straight_line'])
-#
-# plt.subplot(3, 2, 3)
-# plt.plot(x, parabola)
-#
-# plt.subplot(3, 2, 4)
-# plt.plot(x, cubic)
-#
-# plt.subplot(3, 2, 5)
-# plt.plot(x, straight_line)
-#
-# plt.subplot(3, 2, 6)
-# plt.plot(x, parabola)
-# plt.legend(['parabola'])
-#
-# plt.subplots_adjust(bottom=0.1)
-# plt.subplots_adjust(wspace=0.35)
-# plt.show()
+from matplotlib import pyplot as plt
+
+x = range(7)
+straight_line = [0, 1, 2, 3, 4, 5, 6]
+parabola = [0, 1, 4, 9, 16, 25, 36]
+cubic = [0, 1, 8, 27, 64, 125, 216]
+
+plt.subplot(3, 1, 1)  # первая цифра - строки, вторая - столбцы, третья - индексы
+plt.plot(x, straight_line)
+plt.legend(['straight_line'])
+
+plt.subplot(3, 2, 3)
+plt.plot(x, parabola)
+
+plt.subplot(3, 2, 4)
+plt.plot(x, cubic)
+
+plt.subplot(3, 2, 5)
+plt.plot(x, straight_line)
+
+plt.subplot(3, 2, 6)
+plt.plot(x, parabola)
+plt.legend(['parabola'])
+
+plt.subplots_adjust(bottom=0.1)
+plt.subplots_adjust(wspace=0.35)
+plt.show()
 
 ###################################################################################
 # Легенда
@@ -266,14 +266,14 @@ from matplotlib import pyplot as plt
 # использовать метку ключевого слова внутри plt.plot (). Если мы выберем это, мы не
 # передадим никаких меток в plt.legend (). Например
 
-# from matplotlib import pyplot as plt
-#
-# plt.plot([0, 1, 2, 3, 4], [0, 1, 4, 9, 16], label='parabola')
-# plt.plot([0, 1, 2, 3, 4], [0, 1, 8, 27, 64], label='cubic')
-# plt.legend()
-# # plt.legend(['parabola', 'cubic'], loc='best')  # loc - это локация legend по графику
-#
-# plt.show()
+from matplotlib import pyplot as plt
+
+plt.plot([0, 1, 2, 3, 4], [0, 1, 4, 9, 16], label='parabola')
+plt.plot([0, 1, 2, 3, 4], [0, 1, 8, 27, 64], label='cubic')
+plt.legend()
+# plt.legend(['parabola', 'cubic'], loc='best')  # loc - это локация legend по графику
+
+plt.show()
 
 # plt.legend () также может принимать аргумент ключевого слова loc, который позиционирует
 # легенду на рисунк
@@ -291,28 +291,28 @@ from matplotlib import pyplot as plt
 # 2. Создайте легенду для графика, введя legend_labels в plt.legend ().
 # 3. Установите легенду в центре диаграммы.
 
-# from matplotlib import pyplot as plt
-#
-# months = range(12)
-# hyrule = [63, 65, 68, 70, 72, 72, 73, 74, 71, 70, 68, 64]
-# kakariko = [52, 52, 53, 68, 73, 74, 74, 76, 71, 62, 58, 54]
-# gerudo = [98, 99, 99, 100, 99, 100, 98, 101, 101, 97, 98, 99]
-# plt.plot(months, hyrule)
-# plt.plot(months, kakariko)
-# plt.plot(months, gerudo)
-# legend_labels = ['Хайрул', 'Какарико', 'Долина Герудо']
-#
-# ax = plt.subplot(1, 1, 1)
-# plt.plot(months, hyrule)
-# plt.plot(months, kakariko)
-# plt.plot(months, gerudo)
-#
-# ax.set_xticks([4, 6, 8])
-# ax.set_xticklabels(['april', 'june', 'august'])
-# ax.set_yticks([60, 70, 90, 100])
-#
-# plt.legend(legend_labels)
-# plt.show()
+from matplotlib import pyplot as plt
+
+months = range(12)
+hyrule = [63, 65, 68, 70, 72, 72, 73, 74, 71, 70, 68, 64]
+kakariko = [52, 52, 53, 68, 73, 74, 74, 76, 71, 62, 58, 54]
+gerudo = [98, 99, 99, 100, 99, 100, 98, 101, 101, 97, 98, 99]
+plt.plot(months, hyrule)
+plt.plot(months, kakariko)
+plt.plot(months, gerudo)
+legend_labels = ['Хайрул', 'Какарико', 'Долина Герудо']
+
+ax = plt.subplot(1, 1, 1)
+plt.plot(months, hyrule)
+plt.plot(months, kakariko)
+plt.plot(months, gerudo)
+
+ax.set_xticks([4, 6, 8])
+ax.set_xticklabels(['april', 'june', 'august'])
+ax.set_yticks([60, 70, 90, 100])
+
+plt.legend(legend_labels)
+plt.show()
 
 ###################################################################################
 # Изменить метки
@@ -338,30 +338,30 @@ from matplotlib import pyplot as plt
 # ax.set_yticks([0.1, 0.6, 0.8])
 # ax.set_yticklabels(['10%', '60%', '80%'])
 
-# from matplotlib import pyplot as plt
-#
-# months = range(12)
-# temperature = [36, 36, 39, 52, 61, 72, 77, 75, 68, 57, 48, 48]
-# flights_to_hawaii = [1200, 1300, 1100, 1450, 850, 750, 400, 450, 400, 860, 990, 1000]
-#
-# ax = plt.subplot(1, 2, 1)
-#
-# plt.plot(months, temperature)
-# ax.set_xticks([2, 6, 8])
-#
-# plt.title('График температуры')
-# plt.ylabel('Температура')
-#
-# ax2 = plt.subplot(1, 2, 2)
-#
-# plt.plot(months, flights_to_hawaii, linestyle='', marker='o')
-# ax2.set_xticks([3, 4, 6])
-#
-# plt.title('График полета Гавайи')
-# plt.ylabel('Кол-во полётов')
-# plt.subplots_adjust(bottom=0.2)
-# plt.subplots_adjust(wspace=0.5)
-# plt.show()
+from matplotlib import pyplot as plt
+
+months = range(12)
+temperature = [36, 36, 39, 52, 61, 72, 77, 75, 68, 57, 48, 48]
+flights_to_hawaii = [1200, 1300, 1100, 1450, 850, 750, 400, 450, 400, 860, 990, 1000]
+
+ax = plt.subplot(1, 2, 1)
+
+plt.plot(months, temperature)
+ax.set_xticks([2, 6, 8])
+
+plt.title('График температуры')
+plt.ylabel('Температура')
+
+ax2 = plt.subplot(1, 2, 2)
+
+plt.plot(months, flights_to_hawaii, linestyle='', marker='o')
+ax2.set_xticks([3, 4, 6])
+
+plt.title('График полета Гавайи')
+plt.ylabel('Кол-во полётов')
+plt.subplots_adjust(bottom=0.2)
+plt.subplots_adjust(wspace=0.5)
+plt.show()
 
 
 ###################################################################################
@@ -375,28 +375,28 @@ from matplotlib import pyplot as plt
 # 4. Обозначьте оси y как проценты, соответствующие значениям [0,10, 0,25, 0,5,
 # 0,75], а не десятичные дроби
 
-# from matplotlib import pyplot as plt
-#
-# plt.figure(figsize=(10, 6))
-#
-# month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-# months = range(12)
-# conversion = [0.05, 0.08, 0.18, 0.28, 0.4, 0.66, 0.74, 0.78, 0.8, 0.81, 0.85, 0.85]
-# plt.xlabel("Months")
-# plt.ylabel("Conversion")
-#
-# ax = plt.subplot()
-# plt.plot(months, conversion)
-# ax.set_xticks(months)
-# ax.set_xticklabels(month_names)
-# ax.set_yticks([0.1, 0.25, 0.5, 0.75])
-# ax.set_yticklabels(['10%', '25%', '50%', '75%'])
-#
-# plt.savefig('convers.png')  # Сохранение в выбранном расширении
-# plt.savefig('convers.jpg')
-# plt.savefig('convers.svg')
+from matplotlib import pyplot as plt
 
-# plt.show()
+plt.figure(figsize=(10, 6))
+
+month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+months = range(12)
+conversion = [0.05, 0.08, 0.18, 0.28, 0.4, 0.66, 0.74, 0.78, 0.8, 0.81, 0.85, 0.85]
+plt.xlabel("Months")
+plt.ylabel("Conversion")
+
+ax = plt.subplot()
+plt.plot(months, conversion)
+ax.set_xticks(months)
+ax.set_xticklabels(month_names)
+ax.set_yticks([0.1, 0.25, 0.5, 0.75])
+ax.set_yticklabels(['10%', '25%', '50%', '75%'])
+
+plt.savefig('convers.png')  # Сохранение в выбранном расширении
+plt.savefig('convers.jpg')
+plt.savefig('convers.svg')
+
+plt.show()
 
 
 ###################################################################################
@@ -422,3 +422,69 @@ from matplotlib import pyplot as plt
 # plt.savefig('convers.png')  # Сохранение в выбранном расширении
 # plt.savefig('convers.jpg')
 # plt.savefig('convers.svg')
+
+###################################################################################
+# Задание
+# 1. Определите три списка, x, y1 и y2, и заполните их целыми числами. Эти числа могут
+# быть чем угодно, но было бы неплохо, если бы они были фактическими
+# показателями, которые вы хотите сравнивать. Данные можно посмотреть на этом
+# сайте: http://www.tylervigen.com/spurious-correlations
+# 2. Постройте график зависимости y1 и x и отобразите график.
+# 3. На том же графике постройте y2 vs x (после линии, где вы строите y1 vs x)
+# 4. Сделайте линию y1 розовой линией, а линию y2 серой линией. Дайте обеим линиям
+# круглые маркеры.
+# 5. Дайте своему графику название «Две линии на одном графике», а ось X -
+# «Великолепная ось X», а ось Y - «Потрясающая ось Y».
+# 6. Создайте для графика легенду и поместите ее в правом нижнем углу.
+# 7. Попробуйте применить различные методы, изученные в данном разделе. Может
+# быть, сделайте какие-нибудь подграфики и разделите линии. Потренируйтесь с
+# увеличением определенных частей графика или выбором определенных x- или y отметок для отображения
+
+from matplotlib import pyplot as plt
+
+plt.figure(figsize=(10, 9))  # создаём новую фигуру со своими размерами  figsize = (width, height)
+
+x = [2018, 2019, 2020, 2021, 2022]
+y1 = [102, 106, 110, 114, 118]
+y2 = [105.2, 104.26, 102.31, 105.67, 117.83]
+
+ax = plt.subplot(3, 1, 1)
+ax.set_xticks([2018, 2019, 2020, 2021, 2022])
+ax.set_xticklabels(['2018 год', '2019 год', '2020 год', '2021 год', '2022 год'])
+ax.set_yticks([102, 106, 110, 114, 118])
+ax.set_yticklabels(['102%', '106%', '110%', '114%', '118%'])
+plt.plot(x, y1)
+plt.subplots_adjust(hspace=0.1, left=0.15, right=0.95, bottom=0, wspace=0.1)
+plt.title('Индексы потребительских цен на товары и услуги по РФ\n "Две линии на одном графике"', fontsize=10, fontweight="bold", color='#008080')
+plt.xlabel('К соответствующему месяцу предыдущего года\n"Великолепная ось X"', fontsize=8, fontweight="bold", color='red')
+plt.ylabel('Процент\n"Потрясающая ось Y"', fontsize=8, fontweight="bold", color='blue')
+plt.plot(x, y1, color='#ffc0cb', marker='o')
+plt.plot(x, y2, color='#A6AAAB', marker='o')
+plt.legend(y2, loc='lower right', fontsize=7, shadow=True, framealpha=1, facecolor='#66DDAA', edgecolor='#057FDD', title='Легенда')
+
+ax = plt.subplot(3, 3, 4)
+ax.set_xticks([2018, 2020, 2022])
+ax.set_xticklabels(['2018 год', '2020 год', '2022 год'])
+ax.set_yticks([106, 110, 118])
+ax.set_yticklabels(['106%', '110%', '118%'])
+plt.plot(x, y2, color='#0060FA', linestyle='-.', marker='v')
+plt.legend(y2, loc='upper center', fontsize=8, shadow=True, framealpha=1, facecolor='#FFDB00', edgecolor='red', title="I\'m legend")
+plt.xlabel('"Великолепная ось X"', fontsize=8, fontweight="regular", color='orange')
+plt.ylabel('"Потрясающая ось Y"', fontsize=8, fontweight="regular", color='green')
+
+ax = plt.subplot(3, 2, 4)
+ax.set_xticks([2018, 2019, 2020, 2021, 2022])
+ax.set_xticklabels(['2018 год', '2019 год', '2020 год', '2021 год', '2022 год'], color='#0048BA')
+ax.set_yticks([102, 110, 114, 118])
+ax.set_yticklabels(['102%', '110%', '114%', '118%'], color='#00826F')
+plt.plot(x, y1, color='#009B84', marker='s')
+plt.subplots_adjust(hspace=0.5)
+plt.legend(y1, loc='lower right', fontsize=6, shadow=True, framealpha=1, facecolor='#A9D300', edgecolor='red', title="I\'m legend")
+plt.xlabel('"Ось X"', fontsize=8, fontweight="bold")
+plt.ylabel('"Ось Y"', fontsize=8, fontweight="bold")
+
+plt.show()
+plt.savefig('графикДЗ.png')
+plt.close('all')
+
+
