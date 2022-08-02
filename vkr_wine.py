@@ -16,3 +16,11 @@ print(df.describe())
 # print(df['alcohol'].mean())
 # print(df['alcohol'].unique())
 print(df.duplicated().sum())
+
+
+
+
+
+
+
+
